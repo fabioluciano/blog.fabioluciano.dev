@@ -58,6 +58,22 @@ removePathAccents = true
     dateFormat = "01-02"
     rss = 10
 
+  [params.home.profile]
+    enable = true
+    gravatarEmail = "fabio@naoimporta.com"
+    social = true
+  
+  [params.social]
+    GitHub = "fabioluciano"
+    Linkedin = "fabioluciano"
+    Twitter = "fabioluciano"
+    Instagram = "fabioluciano"
+    Telegram = "fabioluciano"
+    Keybase = "fabioluciano"
+    Reddit = "fabioluciano"
+    Spotify = "fabiolucianobr"
+    Email = "fabio@naoimporta.com"
+    RSS = true
 
   [params.page]
     hiddenFromHomePage = false

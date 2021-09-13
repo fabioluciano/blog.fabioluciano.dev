@@ -5,6 +5,7 @@ categories:
 tags:
   - tekton
 title: Pipelines com o Tekton - Instalação
+featuredImage: tekton-horizontal-color.png
 ---
 
 ## Deploy Cert Manager

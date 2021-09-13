@@ -5,6 +5,7 @@ categories:
 tags:
   - tekton
 title: Pipelines com o Tekton - Introdução
+featuredImage: tekton-horizontal-color.png
 ---
 
 # Tekton
