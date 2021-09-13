@@ -1,11 +1,10 @@
 ---
 date: "2021-03-01"
 categories:
-  - ops
+  - tekton
 tags:
   - tekton
 title: Pipelines com o Tekton - Instalação
-draft: true
 ---
 
 ## Deploy Cert Manager

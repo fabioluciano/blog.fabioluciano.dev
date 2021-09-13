@@ -6,7 +6,6 @@ tags:
   - kubernetes
   - multipass
 title: Crie um cluster kubernetes com o multipass
-draft: true
 
 ---
 
