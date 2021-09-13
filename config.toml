@@ -1,0 +1,116 @@
+baseURL = "https://example.com"
+defaultContentLanguage = "pt"
+theme = "LoveIt"
+title = "Fábio Luciano"
+enableRobotsTXT = true
+enableGitInfo = true
+enableEmoji = true
+removePathAccents = true
+
+[menu]
+  [[menu.main]]
+    identifier = "posts"
+    name = "Posts"
+    url = "/posts/"
+    weight = 1
+  [[menu.main]]
+    identifier = "tags"
+    name = "Tags"
+    url = "/tags/"
+    weight = 2
+  [[menu.main]]
+    identifier = "categories"
+    pre = ""
+    post = ""
+    name = "Categorias"
+    url = "/categories/"
+    weight = 3
+  [[menu.main]]
+    identifier = "about"
+    pre = ""
+    post = ""
+    name = "Sobre"
+    url = "/about/"
+    weight = 5
+
+[params]
+  version = "0.2.X"
+  defaultTheme = "auto"
+  gitRepo = "https://github.com/fabioluciano/blog.fabioluciano.dev"
+  dateFormat = "2006-01-02"
+  
+  [params.header]
+    desktopMode = "fixed"
+    mobileMode = "auto"
+
+  [params.footer]
+    enable = true
+    hugo = false
+    copyright = false
+
+  [params.section]
+    paginate = 20
+    dateFormat = "01-02"
+    rss = 10
+
+  [params.list]
+    paginate = 20
+    dateFormat = "01-02"
+    rss = 10
+
+
+  [params.page]
+    hiddenFromHomePage = false
+    hiddenFromSearch = false
+    twemoji = false
+    lightgallery = false
+    ruby = true
+    fraction = true
+    fontawesome = true
+    linkToMarkdown = true
+    rssFullText = false
+
+    [params.page.toc]
+      enable = false
+
+    [params.page.code]
+      copy = true
+      maxShownLines = 20
+
+    [params.page.share]
+      enable = true
+      Twitter = true
+      Facebook = true
+      Linkedin = true
+      Whatsapp = true
+      HackerNews = true
+      Reddit = true
+      Pocket = true
+    [params.page.comment]
+      enable = true
+
+      [params.page.comment.telegram]
+        enable = true
+        siteID = "I2U0ZuYW"
+        limit = 15
+        height = ""
+        color = ""
+        colorful = true
+        dislikes = false
+        outlined = false
+
+[markup]
+  [markup.highlight]
+    codeFences = true
+    guessSyntax = true
+    lineNos = true
+    lineNumbersInTable = true
+    noClasses = false
+
+[author]
+  name = "Fábio Luciano"
+  email = "fabio@naoimporta.com"
+  link = "https://fabioluciano.dev"
+
+[Permalinks]
+  posts = "post/:slug"
