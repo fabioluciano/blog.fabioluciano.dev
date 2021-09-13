@@ -3,7 +3,28 @@
         <title>All Posts - Fábio Luciano</title>
         <link>https://fabioluciano.dev/posts/</link>
         <description>All Posts | Fábio Luciano</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Thu, 22 Jun 2017 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://fabioluciano.dev/posts/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 01 Mar 2021 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://fabioluciano.dev/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>Crie um cluster kubernetes com o multipass</title>
+    <link>https://fabioluciano.dev/crie-um-cluster-kubernetes-com-o-multipass/</link>
+    <pubDate>Mon, 01 Mar 2021 00:00:00 &#43;0000</pubDate>
+    <author>Author</author>
+    <guid>https://fabioluciano.dev/crie-um-cluster-kubernetes-com-o-multipass/</guid>
+    <description><![CDATA[sudo snap install multipass ]]></description>
+</item><item>
+    <title>Pipelines com o Tekton - Instalação</title>
+    <link>https://fabioluciano.dev/pipelines-com-o-tekton-instalacao/</link>
+    <pubDate>Mon, 01 Mar 2021 00:00:00 &#43;0000</pubDate>
+    <author>Author</author>
+    <guid>https://fabioluciano.dev/pipelines-com-o-tekton-instalacao/</guid>
+    <description><![CDATA[Deploy Cert Manager kubectl create ns cert-manager helm repo add jetstack https://charts.jetstack.io helm repo update helm install \  cert-manager jetstack/cert-manager \  -n cert-manager \  --version v1.1.0 \  --set installCRDs=true openssl genrsa -out ca.key 2048 openssl req -x509 -new -nodes -key ca.key -subj &#34;/CN=integr8.me&#34; -days 3650 -reqexts v3_req -extensions v3_ca -out ca.crt kubectl create secret tls integr8-ca-key-pair \  -n cert-manager \  --cert=ca.crt \  --key=ca.key \ apiVersion:cert-manager.]]></description>
+</item><item>
+    <title>Pipelines com o Tekton - Introdução</title>
+    <link>https://fabioluciano.dev/pipelines-com-o-tekton-introducao/</link>
+    <pubDate>Mon, 01 Mar 2021 00:00:00 &#43;0000</pubDate>
+    <author>Author</author>
+    <guid>https://fabioluciano.dev/pipelines-com-o-tekton-introducao/</guid>
+    <description><![CDATA[Tekton  Características  É um projeto Open Source mantido pela CNCF; Todas os elementos são objetos do Kubernetes; É focado em reutilização(TriggerBinding, TriggerTemplate, Pipeline, Task); Seu funcionamento se dá pela implementação de CRDs(Custom Resource Definition) customizados para cada um dos elementos descritos posteriormente.   Ecossistema  Tekton Triggers - Pacote com os CRDs referentes a escuta de eventos e como respondê-los; Tekton Pipelines - Pacote com os CRDs referentes a construção de tasks, recursos e elementos referentes a pipeline; Tekton Dashboard - Interface para consumir informações de execuções de pipelines; Tekton Hub - Coleção de tasks disponíveis para execução de determinadas tarefas; CLI Tool - Ferramenta de linha de comando para consumir informações e executar ações no ecossistema;   Tekton Triggers  EventListener - Elemento responsável por interceptar as requisições feitas ao endereço do Ingress; Trigger - Elemento responsável por configurar os gatilhos que ativarão determinadas TriggerTemplates; TriggerBinding - Permite a captura de informações de um evento, e transformação em um parâmetro consumível pela Pipeline; TriggerTemplate - Cria um template de invocação de algum elemento do pacote de pipelines.]]></description>
+</item><item>
     <title>Instalando o virtualbox 5.1 no ubuntu</title>
     <link>https://fabioluciano.dev/instalando-o-virtualbox-5.1-no-ubuntu/</link>
     <pubDate>Thu, 22 Jun 2017 00:00:00 &#43;0000</pubDate>

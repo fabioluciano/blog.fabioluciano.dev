@@ -1,0 +1,14 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>kubernetes - Tag - Fábio Luciano</title>
+        <link>https://fabioluciano.dev/tags/kubernetes/</link>
+        <description>kubernetes - Tag - Fábio Luciano</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 01 Mar 2021 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://fabioluciano.dev/tags/kubernetes/" rel="self" type="application/rss+xml" /><item>
+    <title>Crie um cluster kubernetes com o multipass</title>
+    <link>https://fabioluciano.dev/crie-um-cluster-kubernetes-com-o-multipass/</link>
+    <pubDate>Mon, 01 Mar 2021 00:00:00 &#43;0000</pubDate>
+    <author>Author</author>
+    <guid>https://fabioluciano.dev/crie-um-cluster-kubernetes-com-o-multipass/</guid>
+    <description><![CDATA[sudo snap install multipass ]]></description>
+</item></channel>
+</rss>

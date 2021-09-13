@@ -3,12 +3,19 @@
         <title>Categories - Category - Fábio Luciano</title>
         <link>https://fabioluciano.dev/categories/</link>
         <description>Categories - Category - Fábio Luciano</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Thu, 22 Jun 2017 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://fabioluciano.dev/categories/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 01 Mar 2021 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://fabioluciano.dev/categories/" rel="self" type="application/rss+xml" /><item>
     <title>ops</title>
     <link>https://fabioluciano.dev/categories/ops/</link>
-    <pubDate>Thu, 22 Jun 2017 00:00:00 &#43;0000</pubDate>
+    <pubDate>Mon, 01 Mar 2021 00:00:00 &#43;0000</pubDate>
     <author>Author</author>
     <guid>https://fabioluciano.dev/categories/ops/</guid>
+    <description><![CDATA[]]></description>
+</item><item>
+    <title>tekton</title>
+    <link>https://fabioluciano.dev/categories/tekton/</link>
+    <pubDate>Mon, 01 Mar 2021 00:00:00 &#43;0000</pubDate>
+    <author>Author</author>
+    <guid>https://fabioluciano.dev/categories/tekton/</guid>
     <description><![CDATA[]]></description>
 </item></channel>
 </rss>
