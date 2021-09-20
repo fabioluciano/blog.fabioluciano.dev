@@ -1,7 +1,7 @@
 {
 	"version": 3,
 	"file": "mermaid.min.css",
-	"sourceRoot": "/home/runner/work/blog.fabioluciano.dev/blog.fabioluciano.dev",
+	"sourceRoot": "/home/runner/work/fabioluciano.dev/fabioluciano.dev",
 	"sources": [
 		"themes/LoveIt/assets/lib/mermaid/mermaid.scss",
 		"themes/LoveIt/assets/lib/mermaid/themes/neutral/index.scss",
