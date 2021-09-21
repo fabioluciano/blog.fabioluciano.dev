@@ -9,29 +9,29 @@ removePathAccents = true
 
 [menu]
   [[menu.main]]
+    identifier = "resume"
+    pre = ""
+    post = ""
+    name = "Curriculo"
+    url = "https://me.fabioluciano.dev/"
+    weight = 1
+  [[menu.main]]
     identifier = "posts"
     name = "Posts"
     url = "/posts/"
-    weight = 1
+    weight = 2
   [[menu.main]]
     identifier = "tags"
     name = "Tags"
     url = "/tags/"
-    weight = 2
+    weight = 3
   [[menu.main]]
     identifier = "categories"
     pre = ""
     post = ""
     name = "Categorias"
     url = "/categories/"
-    weight = 3
-  [[menu.main]]
-    identifier = "about"
-    pre = ""
-    post = ""
-    name = "Sobre"
-    url = "/about/"
-    weight = 5
+    weight = 4
 
 [params]
   version = "0.2.X"
