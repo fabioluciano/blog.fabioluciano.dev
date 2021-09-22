@@ -77,8 +77,7 @@ featuredImage: tekton-horizontal-color.png
 - Recebe os parâmetros de uma `TriggerBinding` e os atribui a um `PipelineRun` ou `TaskRun`;
 
 ---
-
-{{< mermaid >}}
+``` mermaid
 graph TD;
     GithubWebhookEvent(Github Event)-->|Envia um json para o webhook|IngressEventListener(Ingress);
     IngressEventListener-->
@@ -87,7 +86,7 @@ graph TD;
     Trigger -->|Passa o conteúdo do evento| TriggerBinding;
     TriggerBinding -->|Cria variáveis que serão consumidas | TriggerTemplate;
     TriggerTemplate -->|Invoca uma execução de pipeline| PipelineRun;
-{{< /mermaid >}}
+```
 
 ---
 
@@ -155,10 +154,10 @@ spec:
 
 ---
 
-{{< mermaid >}}
+``` mermaid
 graph TD;
     PipelineRun -->|Instancia uma pipeline com determinados parâmetros| Pipeline;
     Pipeline -->|Instancia uma lista de tarefas| TaskRun;
     TaskRun -->|Instancia uma tarefa| Task;
     Task -->|Executa procedimentos para execução de uma tarefa| Steps;
-{{< /mermaid >}}
+```
