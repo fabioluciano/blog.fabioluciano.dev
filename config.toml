@@ -1,50 +1,52 @@
 baseURL = "https://fabioluciano.dev"
-defaultContentLanguage = "pt"
-theme = "congo"
+languageCode = "en-us"
 title = "Fábio Luciano"
-enableRobotsTXT = true
-enableGitInfo = true
-enableEmoji = true
-removePathAccents = true
+theme="archie"
+copyright = "Fábio Luciano"
+pygmentsstyle = "tango"
+pygmentscodefences = true
+pygmentscodefencesguesssyntax = true
 
-[menu]
-  [[menu.main]]
-    identifier = "resume"
-    pre = ""
-    post = ""
-    name = "Curriculo"
-    url = "https://me.fabioluciano.dev/"
-    weight = 1
-  [[menu.main]]
-    identifier = "posts"
-    name = "Posts"
-    url = "/posts/"
-    weight = 2
-  [[menu.main]]
-    identifier = "tags"
-    name = "Tags"
-    url = "/tags/"
-    weight = 3
-  [[menu.main]]
-    identifier = "categories"
-    pre = ""
-    post = ""
-    name = "Categorias"
-    url = "/categories/"
-    weight = 4
+[params]
+	mode="light"
+	useCDN=true
 
-[markup]
-  [markup.highlight]
-    codeFences = true
-    guessSyntax = true
-    lineNos = true
-    lineNumbersInTable = true
-    noClasses = false
+[[params.social]]
+name = "GitHub"
+icon = "github"
+url = "https://github.com/fabioluciano/"
 
-[author]
-  name = "Fábio Luciano"
-  email = "fabio@naoimporta.com"
-  link = "https://fabioluciano.dev"
+[[params.social]]
+name = "Twitter"
+icon = "twitter"
+url = "https://twitter.com/fabioluciano/"
 
-[Permalinks]
-  posts = "post/:slug"
+[[params.social]]
+name = "Currículo"
+icon = "user"
+url = "https://me.fabioluciano.dev/"
+
+[[menu.main]]
+name = "Home"
+url = "/"
+weight = 1
+
+[[menu.main]]
+name = "Posts"
+url = "/posts"
+weight = 2
+
+[[menu.main]]
+name = "Sobre"
+url = "/about"
+weight = 3
+
+[[menu.main]]
+name = "Tags"
+url = "/tags"
+weight = 4
+
+[[menu.main]]
+name = "Currículo"
+url = "https://me.fabioluciano.dev/"
+weight = 6
