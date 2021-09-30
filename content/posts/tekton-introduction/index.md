@@ -5,21 +5,14 @@ categories:
 tags:
   - tekton
 title: Pipelines com o Tekton - Introdução
-featuredImage: tekton-horizontal-color.png
----
-
-# Tekton
-
 ---
 
 ## Características
 
-- É um projeto Open Source mantido pela CNCF;
+- É um projeto Open Source mantido pela [CD Foundation](https://cd.foundation/);
 - Todas os elementos são objetos do Kubernetes;
 - É focado em reutilização(`TriggerBinding`, `TriggerTemplate`, `Pipeline`, `Task`);
 - Seu funcionamento se dá pela implementação de `CRD`s(Custom Resource Definition) customizados para cada um dos elementos descritos posteriormente.
-
----
 
 ## Ecossistema
 
@@ -29,8 +22,6 @@ featuredImage: tekton-horizontal-color.png
 - [Tekton Hub](https://hub-preview.tekton.dev/) - Coleção de tasks disponíveis para execução de determinadas tarefas;
 - [CLI Tool](https://tekton.dev/docs/cli/) - Ferramenta de linha de comando para consumir informações e executar ações no ecossistema;
 
----
-
 ## Tekton Triggers
 
 - [EventListener](https://tekton.dev/docs/triggers/eventlisteners/) - Elemento responsável por interceptar as requisições feitas ao endereço do `Ingress`;
@@ -38,14 +29,10 @@ featuredImage: tekton-horizontal-color.png
 - [TriggerBinding](https://tekton.dev/docs/triggers/triggerbindings/) - Permite a captura de informações de um evento, e transformação em um parâmetro consumível pela `Pipeline`;
 - [TriggerTemplate](https://tekton.dev/docs/triggers/triggertemplates/) - Cria um template de invocação de algum elemento do pacote de pipelines. (Eg. `PipelineRun`, `TaskRun`).
 
----
-
 ### EventListener
 
 - Cria uma `Service` que pode ser anexado a um `Ingress` para receber requisições externas (eg. Endereço utilizado no `webhook` do repositório);
 - É a entidade que aglomerá os `Trigger`s que tratarão as requisições ao `EventListener`.
-
----
 
 ### Trigger
 
@@ -54,8 +41,6 @@ featuredImage: tekton-horizontal-color.png
 - O interceptor `CEL` é o mais versátil, definindo filtros e overlays às informações.
   - **Filtros**: Informa quais campos da requisição vai disparar o gatilho. (eg. `"header.match('X-GitHub-Event', 'pull_request')"`);
   - **Overlays**: Executa transformações em campos da requisição, para consumo na pipeline. (eg. `"body.pull_request.head.sha.truncate(7)"`).
-
----
 
 ### TriggerBinding
 
@@ -69,14 +54,11 @@ featuredImage: tekton-horizontal-color.png
   value: $(body.action)
 ```
 
----
-
 ### TriggerTemplate
 
 - Neste objeto são configurados os templates padrão para cada evento disparado em um dos `Triggers`;
 - Recebe os parâmetros de uma `TriggerBinding` e os atribui a um `PipelineRun` ou `TaskRun`;
 
----
 ``` mermaid
 graph TD;
     GithubWebhookEvent(Github Event)-->|Envia um json para o webhook|IngressEventListener(Ingress);
@@ -88,8 +70,6 @@ graph TD;
     TriggerTemplate -->|Invoca uma execução de pipeline| PipelineRun;
 ```
 
----
-
 ## Tekton Pipelines
 
 - [Pipeline](https://tekton.dev/docs/pipelines/pipelines/) - Objeto que agrupa `Task`s comuns à pipeline;
@@ -97,8 +77,6 @@ graph TD;
 - [PipelineResource](https://tekton.dev/docs/pipelines/resources/) - Objetos que serão utilizados como entradas/saídas de uma `Task`;
 - [Task](https://tekton.dev/docs/pipelines/tasks/) - É uma coleção de `Steps` a serem executados para conclusão de uma determinada tarefa;
 - [TaskRun](https://tekton.dev/docs/pipelines/taskruns/) - Instancia e executa uma determinada `Task`;
-
----
 
 ### Pipeline
 
@@ -109,15 +87,11 @@ graph TD;
 - Os volumes, utilizados para transição de informações entre `Tasks` são denominados workspaces.
 - Workspaces podem ser utilizados para reutilizar bibliotecas e acelerar o processo de build (node_modules(nodejs/frontend), .terraform(:P), .m2(JAVA), vendor(PHP))
 
----
-
 ### PipelineResource
 
 - Ajudam a abstrair os recursos consumidos por uma `Pipeline`/`Task`;
 - Podem ser de entrada(input), ou de saída(output);
 - Podem ser dos tipos: `Git`, `PullRequest`, `Image`, `Cluster`, `GCS` e `CloudEvent`.
-
----
 
 ### Task
 
@@ -126,8 +100,6 @@ graph TD;
 - Possui uma versão que transpõem o namespace `ClusterTask`;
 - Cada `Step` dentro de uma `Task` é traduzido em um container sendo executado.
 - Como um objeto do Kubernetes, pode consumir outros objetos, como `ConfigMaps` e `Secrets`.
-
----
 
 ```yaml
 apiVersion: tekton.dev/v1beta1
@@ -151,8 +123,6 @@ spec:
         echo "$(inputs.params.pipelinerun-name)"
         echo "$(inputs.params.repo-name)"
 ```
-
----
 
 ``` mermaid
 graph TD;
