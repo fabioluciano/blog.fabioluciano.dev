@@ -24,7 +24,7 @@ jobs:
         with:
           ruby-version: 2.6
 
-      - run: gem install asciidoctor asciidoctor-diagram
+      - run: gem install asciidoctor
         
       - name: Run Hugo
         run: hugo --debug
