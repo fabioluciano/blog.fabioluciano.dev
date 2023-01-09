@@ -3,5 +3,6 @@ public
 .env
 .gitignore
 .hugo_build.loc
-content/**/*.svg
 .asciidoctor/
+.hugo_build.lock
+content/posts/**/plantuml-**
