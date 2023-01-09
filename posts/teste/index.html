@@ -1,0 +1,223 @@
+<!doctype html><html><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><title>teste - Fábio Luciano</title><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="Sequence diagram Figure 1. Sequence diagram Activity diagrams (the new one) Figure 2. Activity diagram Documentation
+Timing diagram Figure 3. Timing diagram Documentation
+Gantt diagram Figure 4. Gantt diagram Documentation
+Wireframe Figure 5. Wireframe example Ditaa Sprites diagram Figure 6. Diagram with Sprite Documentation
+Following diagrams today require GraphViz’s dot binary, a possible alternative would be to use an abandoned port (3 years without update) of dot in Java, however not everything is supported, like arrows."><meta property="og:image" content><meta property="og:title" content="teste"><meta property="og:description" content="Sequence diagram Figure 1. Sequence diagram Activity diagrams (the new one) Figure 2. Activity diagram Documentation
+Timing diagram Figure 3. Timing diagram Documentation
+Gantt diagram Figure 4. Gantt diagram Documentation
+Wireframe Figure 5. Wireframe example Ditaa Sprites diagram Figure 6. Diagram with Sprite Documentation
+Following diagrams today require GraphViz’s dot binary, a possible alternative would be to use an abandoned port (3 years without update) of dot in Java, however not everything is supported, like arrows."><meta property="og:type" content="article"><meta property="og:url" content="https://fabioluciano.dev/posts/teste/"><meta property="article:section" content="posts"><meta name=twitter:card content="summary"><meta name=twitter:title content="teste"><meta name=twitter:description content="Sequence diagram Figure 1. Sequence diagram Activity diagrams (the new one) Figure 2. Activity diagram Documentation
+Timing diagram Figure 3. Timing diagram Documentation
+Gantt diagram Figure 4. Gantt diagram Documentation
+Wireframe Figure 5. Wireframe example Ditaa Sprites diagram Figure 6. Diagram with Sprite Documentation
+Following diagrams today require GraphViz’s dot binary, a possible alternative would be to use an abandoned port (3 years without update) of dot in Java, however not everything is supported, like arrows."><script src=https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js></script>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@1,500&display=swap" rel=stylesheet><link href="https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap" rel=stylesheet><link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel=stylesheet><link rel=stylesheet type=text/css media=screen href=https://fabioluciano.dev/css/main.2f9b5946627215dc1ae7fa5f82bfc9cfcab000329136befeea5733f21e77d68f.css><link rel=stylesheet type=text/css href=https://fabioluciano.dev/css/dark.726cd11ca6eb7c4f7d48eb420354f814e5c1b94281aaf8fd0511c1319f7f78a4.css></head><body><div class=content><header><div class=main><a href=https://fabioluciano.dev>Fábio Luciano</a></div><nav><a href=/>Home</a>
+<a href=/posts>Posts</a>
+<a href=/about>Sobre</a>
+<a href=/tags>Tags</a>
+<a href=https://me.fabioluciano.dev/>Currículo</a></nav></header><main><article><div class=title><h1 class=title>teste</h1><div class=meta>Posted on Jan 1, 0001</div></div><section class=body><div class=sect1><h2 id=_sequence_diagram>Sequence diagram</h2><div class=sectionbody><div class=imageblock><div class=content><img src=sequence-diagram-example.svg alt="sequence diagram example" width=375 height=327></div><div class=title>Figure 1. Sequence diagram</div></div></div></div><div class=sect1><h2 id=_activity_diagrams_the_new_one>Activity diagrams (the new one)</h2><div class=sectionbody><div class=imageblock><div class=content><img src=activity-diagram-example.svg alt="activity diagram example" width=835 height=281></div><div class=title>Figure 2. Activity diagram</div></div><div class=paragraph><p><a href=http://plantuml.com/activity-diagram-beta>Documentation</a></p></div></div></div><div class=sect1><h2 id=_timing_diagram>Timing diagram</h2><div class=sectionbody><div class=imageblock><div class=content><img src=timing-diagram-example.svg alt="timing diagram example" width=446 height=228></div><div class=title>Figure 3. Timing diagram</div></div><div class=paragraph><p><a href=http://plantuml.com/timing-diagram>Documentation</a></p></div></div></div><div class=sect1><h2 id=_gantt_diagram>Gantt diagram</h2><div class=sectionbody><div class=imageblock><div class=content><img src=gantt-diagram-example.svg alt="gantt diagram example" width=322 height=84></div><div class=title>Figure 4. Gantt diagram</div></div><div class=paragraph><p><a href=http://plantuml.com/gantt-diagram>Documentation</a></p></div></div></div><div class=sect1><h2 id=_wireframe>Wireframe</h2><div class=sectionbody><div class=imageblock><div class=content><img src=wireframe-example.svg alt="wireframe example" width=282 height=140></div><div class=title>Figure 5. Wireframe example</div></div></div></div><div class=sect1><h2 id=_ditaa>Ditaa</h2><div class=sectionbody><div class=imageblock><div class=content><img src=ditaa-diagram.svg alt="ditaa diagram" width=390 height=182></div></div></div></div><div class=sect1><h2 id=_sprites_diagram>Sprites diagram</h2><div class=sectionbody><div class=imageblock><div class=content><img src=sprite-example.svg alt="sprite example" width=201 height=120></div><div class=title>Figure 6. Diagram with Sprite</div></div><div class=paragraph><p><a href=http://plantuml.com/sprite>Documentation</a></p></div><hr><div class=paragraph><p>Following diagrams today require GraphViz’s <code>dot</code> binary, a possible
+alternative would be to use an abandoned port (3 years without update)
+of <code>dot</code> in Java, however not everything is supported, like arrows.</p></div><div class=listingblock><div class=content><pre>!pragma graphviz_dot jdot</pre></div></div><hr></div></div><div class=sect1><h2 id=_component_diagram>Component diagram</h2><div class=sectionbody><div class=listingblock><div class=title>Component diagram</div><div class=content><pre>Failed to generate image: PlantUML preprocessing failed: [From &lt;input&gt; (line 2) ]
+
+@startuml
+!pragma graphviz_dot jdot
+^^^^^
+ This directive has been renamed to &#39;!pragma layout smetana&#39;. Please update your diagram.
+
+!pragma graphviz_dot jdot
+
+package &#34;Some Group&#34; {
+  HTTP - [First Component]
+  [Another Component]
+}
+
+node &#34;Other Groups&#34; {
+  FTP - [Second Component]
+  [First Component] --&gt; FTP
+}
+
+cloud {
+  [Example 1]
+}
+
+
+database &#34;MySql&#34; {
+  folder &#34;This is my folder&#34; {
+    [Folder 3]
+  }
+  frame &#34;Foo&#34; {
+    [Frame 4]
+  }
+}
+
+
+[Another Component] --&gt; [Example 1]
+[Example 1] --&gt; [Folder 3]
+[Folder 3] --&gt; [Frame 4]</pre></div></div></div></div><div class=sect1><h2 id=_state_diagram>State diagram</h2><div class=sectionbody><div class=listingblock><div class=title>State diagram</div><div class=content><pre>Failed to generate image: PlantUML preprocessing failed: [From &lt;input&gt; (line 2) ]
+
+@startuml
+!pragma graphviz_dot jdot
+^^^^^
+ This directive has been renamed to &#39;!pragma layout smetana&#39;. Please update your diagram.
+
+!pragma graphviz_dot jdot
+
+[*] --&gt; State1
+State1 --&gt; [*]
+State1 : this is a string
+State1 : this is another string
+
+State1 -&gt; State2
+State2 --&gt; [*]</pre></div></div></div></div><div class=sect1><h2 id=_object_diagram>Object diagram</h2><div class=sectionbody><div class=listingblock><div class=title>Object diagram</div><div class=content><pre>Failed to generate image: PlantUML preprocessing failed: [From &lt;input&gt; (line 2) ]
+
+@startuml
+!pragma graphviz_dot jdot
+^^^^^
+ This directive has been renamed to &#39;!pragma layout smetana&#39;. Please update your diagram.
+
+!pragma graphviz_dot jdot
+
+object Object01
+object Object02
+object Object03
+object Object04
+object Object05
+object Object06
+object Object07
+object Object08
+
+Object01 &lt;|-- Object02
+Object03 *-- Object04
+Object05 o-- &#34;4&#34; Object06
+Object07 .. Object08 : some labels</pre></div></div></div></div><div class=sect1><h2 id=_class_diagram>Class diagram</h2><div class=sectionbody><div class=listingblock><div class=title>Class diagram</div><div class=content><pre>Failed to generate image: PlantUML preprocessing failed: [From &lt;input&gt; (line 2) ]
+
+@startuml
+!pragma graphviz_dot jdot
+^^^^^
+ This directive has been renamed to &#39;!pragma layout smetana&#39;. Please update your diagram.
+
+!pragma graphviz_dot jdot
+
+class Object &lt;&lt; general &gt;&gt;
+Object &lt;|--- ArrayList
+
+note top of Object : In java, every class\nextends this one.
+
+note &#34;This is a floating note&#34; as N1
+note &#34;This note is connected\nto several objects.&#34; as N2
+Object .. N2
+N2 .. ArrayList
+
+class Foo
+note left: On last defined class</pre></div></div></div></div><div class=sect1><h2 id=_use_case_diagram>Use-case diagram</h2><div class=sectionbody><div class=listingblock><div class=title>Use case diagram</div><div class=content><pre>Failed to generate image: PlantUML preprocessing failed: [From &lt;input&gt; (line 2) ]
+
+@startuml
+!pragma graphviz_dot jdot
+^^^^^
+ This directive has been renamed to &#39;!pragma layout smetana&#39;. Please update your diagram.
+
+!pragma graphviz_dot jdot
+
+:Main Admin: as Admin
+(Use the application) as (Use)
+
+User -&gt; (Start)
+User --&gt; (Use)
+
+Admin ---&gt; (Use)
+
+note right of Admin : This is an example.
+
+note right of (Use)
+  A note can also
+  be on several lines
+end note
+
+note &#34;This note is connected\nto several objects.&#34; as N2
+(Start) .. N2
+N2 .. (Use)</pre></div></div></div></div><div class=sect1><h2 id=_deployment_diagram>Deployment diagram</h2><div class=sectionbody><div class=listingblock><div class=title>Deployment diagram</div><div class=content><pre>Failed to generate image: PlantUML preprocessing failed: [From &lt;input&gt; (line 2) ]
+
+@startuml
+!pragma graphviz_dot jdot
+^^^^^
+ This directive has been renamed to &#39;!pragma layout smetana&#39;. Please update your diagram.
+
+!pragma graphviz_dot jdot
+
+cloud cloud1
+cloud cloud2
+cloud cloud3
+cloud cloud4
+cloud cloud5
+cloud1 -0- cloud2
+cloud1 -0)- cloud3
+cloud1 -(0- cloud4
+cloud1 -(0)- cloud5</pre></div></div></div></div><div class=sect1><h2 id=_available_archimate_sprites>Available archimate sprites</h2><div class=sectionbody><div class=imageblock><div class=content><img src=list-sprites.svg alt="list sprites" width=865 height=516></div><div class=title>Figure 7. Available sprites</div></div></div></div><div class=sect1><h2 id=_archimate_sprites>Archimate sprites</h2><div class=sectionbody><div class=listingblock><div class=title>Archimate diagram</div><div class=content><pre>Failed to generate image: PlantUML preprocessing failed: [From &lt;input&gt; (line 2) ]
+
+@startuml
+!pragma graphviz_dot jdot
+^^^^^
+ This directive has been renamed to &#39;!pragma layout smetana&#39;. Please update your diagram.
+
+!pragma graphviz_dot jdot
+
+sprite $bProcess jar:archimate/business-process
+sprite $aService jar:archimate/application-service
+sprite $aComponent jar:archimate/application-component
+
+archimate #Business &#34;Handle claim&#34;  as HC &lt;&lt;business-process&gt;&gt;
+archimate #Business &#34;Capture Information&#34;  as CI &lt;&lt;business-process&gt;&gt;
+archimate #Business &#34;Notify\nAdditional Stakeholders&#34; as NAS &lt;&lt;business-process&gt;&gt;
+archimate #Business &#34;Validate&#34; as V &lt;&lt;business-process&gt;&gt;
+archimate #Business &#34;Investigate&#34; as I &lt;&lt;business-process&gt;&gt;
+archimate #Business &#34;Pay&#34; as P &lt;&lt;business-process&gt;&gt;
+
+HC *-down- CI
+HC *-down- NAS
+HC *-down- V
+HC *-down- I
+HC *-down- P
+
+CI -right-&gt;&gt; NAS
+NAS -right-&gt;&gt; V
+V -right-&gt;&gt; I
+I -right-&gt;&gt; P
+
+archimate #APPLICATION &#34;Scanning&#34; as scanning &lt;&lt;application-service&gt;&gt;
+archimate #APPLICATION &#34;Customer admnistration&#34; as customerAdministration &lt;&lt;application-service&gt;&gt;
+archimate #APPLICATION &#34;Claims admnistration&#34; as claimsAdministration &lt;&lt;application-service&gt;&gt;
+archimate #APPLICATION Printing  &lt;&lt;application-service&gt;&gt;
+archimate #APPLICATION Payment  &lt;&lt;application-service&gt;&gt;
+
+scanning -up-&gt; CI
+customerAdministration  -up-&gt; CI
+claimsAdministration -up-&gt; NAS
+claimsAdministration -up-&gt; V
+claimsAdministration -up-&gt; I
+Payment -up-&gt; P
+
+Printing -up-&gt; V
+Printing -up-&gt; P
+
+archimate #APPLICATION &#34;Document\nManagement\nSystem&#34; as DMS &lt;&lt;application-component&gt;&gt;
+archimate #APPLICATION &#34;General\nCRM\nSystem&#34; as CRM &lt;&lt;application-component&gt;&gt;
+archimate #APPLICATION &#34;Home &amp; Away\nPolicy\nAdministration&#34; as HAPA &lt;&lt;application-component&gt;&gt;
+archimate #APPLICATION &#34;Home &amp; Away\nFinancial\nAdministration&#34; as HFPA &lt;&lt;application-component&gt;&gt;
+
+DMS .up.|&gt; scanning
+DMS .up.|&gt; Printing
+CRM .up.|&gt; customerAdministration
+HAPA .up.|&gt; claimsAdministration
+HFPA .up.|&gt; Payment
+
+legend left
+Example from the &#34;Archisurance case study&#34; (OpenGroup).
+See
+==
+&lt;$bProcess&gt; :business process
+==
+&lt;$aService&gt; : application service
+==
+&lt;$aComponent&gt; : application component
+endlegend</pre></div></div></div></div></section><div class=post-tags></div></article></main><footer><hr><a class=soc href=https://github.com/fabioluciano/ title=GitHub><i data-feather=github></i></a>|<a class=soc href=https://twitter.com/fabioluciano/ title=Twitter><i data-feather=twitter></i></a>|<a class=soc href=https://me.fabioluciano.dev/ title=Currículo><i data-feather=user></i></a>|⚡️
+2023 Fábio Luciano | <a href=https://github.com/athul/archie>Archie Theme</a> | Built with <a href=https://gohugo.io>Hugo</a></footer><script>feather.replace()</script></div></body></html>
