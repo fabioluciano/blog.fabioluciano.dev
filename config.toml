@@ -3,12 +3,21 @@ languageCode = "en-us"
 title = "Fábio Luciano"
 theme="archie"
 copyright = "Fábio Luciano"
-pygmentsstyle = "tango"
+pygmentsstyle = "dracula"
 pygmentscodefences = true
 pygmentscodefencesguesssyntax = true
 
+[security.exec]
+allow = ["^asciidoctor$"]
+
+[markup]
+  [markup.asciidocExt]
+    extensions = ["asciidoctor-diagram"]
+
+
+
 [params]
-	mode="light"
+	mode="dark"
 	useCDN=true
 
 [[params.social]]
