@@ -1,1 +1,21 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>virtualbox on Fábio Luciano</title><link>https://fabioluciano.dev/tags/virtualbox/</link><description>Recent content in virtualbox on Fábio Luciano</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright>Fábio Luciano</copyright><lastBuildDate>Thu, 22 Jun 2017 00:00:00 +0000</lastBuildDate><atom:link href="https://fabioluciano.dev/tags/virtualbox/index.xml" rel="self" type="application/rss+xml"/><item><title>Instalando o virtualbox 5.1 no ubuntu</title><link>https://fabioluciano.dev/posts/20170622-instalando-o-virtualbox-no-ubuntu/</link><pubDate>Thu, 22 Jun 2017 00:00:00 +0000</pubDate><guid>https://fabioluciano.dev/posts/20170622-instalando-o-virtualbox-no-ubuntu/</guid><description>Um dos maiores desafios atuais dos desenvolvedores é a implementação agnóstica aos ambientes disponíveis. Mas isso, infelizmente, nem sempre é a realidade, principalmente se você utiliza o Linux em seu desktop ou notebook, e necessita fazer testes em ambientes Windows. Para resolver tais problemas diversos são disponíveis, e grande parte delas envolvem tecnologias de virtualizações de ambientes. Dois são os aplicativos principais no mercado atualmente, o VMWare e o Virtualbox, e por motivos de sinergia entre as ferramentas disponíveis(Vagrant), utilizaremos o VirtualBox.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>virtualbox on Fábio Luciano</title>
+    <link>https://fabioluciano.dev/tags/virtualbox/</link>
+    <description>Recent content in virtualbox on Fábio Luciano</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Fábio Luciano</copyright>
+    <lastBuildDate>Thu, 22 Jun 2017 00:00:00 +0000</lastBuildDate><atom:link href="https://fabioluciano.dev/tags/virtualbox/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Instalando o virtualbox 5.1 no ubuntu</title>
+      <link>https://fabioluciano.dev/posts/20170622-instalando-o-virtualbox-no-ubuntu/</link>
+      <pubDate>Thu, 22 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://fabioluciano.dev/posts/20170622-instalando-o-virtualbox-no-ubuntu/</guid>
+      <description>Um dos maiores desafios atuais dos desenvolvedores é a implementação agnóstica aos ambientes disponíveis. Mas isso, infelizmente, nem sempre é a realidade, principalmente se você utiliza o Linux em seu desktop ou notebook, e necessita fazer testes em ambientes Windows. Para resolver tais problemas diversos são disponíveis, e grande parte delas envolvem tecnologias de virtualizações de ambientes. Dois são os aplicativos principais no mercado atualmente, o VMWare e o Virtualbox, e por motivos de sinergia entre as ferramentas disponíveis(Vagrant), utilizaremos o VirtualBox.</description>
+    </item>
+    
+  </channel>
+</rss>

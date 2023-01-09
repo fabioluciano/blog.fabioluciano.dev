@@ -1,7 +1,128 @@
-<!doctype html><html><head><meta name=generator content="Hugo 0.109.0"><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><title>Fábio Luciano | Home</title><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content><meta property="og:image" content><link rel=alternate type=application/rss+xml href=https://fabioluciano.dev/index.xml title="Fábio Luciano"><meta property="og:title" content="Fábio Luciano"><meta property="og:description" content><meta property="og:type" content="website"><meta property="og:url" content="https://fabioluciano.dev/"><meta name=twitter:card content="summary"><meta name=twitter:title content="Fábio Luciano"><meta name=twitter:description content><script src=https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js></script>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@1,500&display=swap" rel=stylesheet><link href="https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap" rel=stylesheet><link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel=stylesheet><link rel=stylesheet type=text/css media=screen href=https://fabioluciano.dev/css/main.2f9b5946627215dc1ae7fa5f82bfc9cfcab000329136befeea5733f21e77d68f.css><link rel=stylesheet type=text/css href=https://fabioluciano.dev/css/dark.726cd11ca6eb7c4f7d48eb420354f814e5c1b94281aaf8fd0511c1319f7f78a4.css></head><body><div class=content><header><div class=main><a href=https://fabioluciano.dev>Fábio Luciano</a></div><nav><a href=/>Home</a>
-<a href=/posts>Posts</a>
-<a href=/about>Sobre</a>
-<a href=/tags>Tags</a>
-<a href=https://me.fabioluciano.dev/>Currículo</a></nav></header><main class=list><div class=site-description></div><section class=list-item><h1 class=title><a href=/posts/bom-dia-time-como-estamos/>Bom dia time! Como estamos?</a></h1><time>Dec 13, 2022</time><br><div class=description>Há algum tempo venho pensando em escrever sobre o assunto que traterei neste post. A verdade é que ele era para ter sido publicado no mês de setembro, para casar com as mensagens do Setembro Amarelo, mas eu ainda não conseguia escrever sobre. As ideias estavam na cabeça, mas a vontade de escrever não vinha. A verdade é que a ideia de escrever sobre isso veio há dois anos atrás, quando alguns eventos em minha vida profissional me fizeram questionar muitos aspectos sobre a responsabilidade da minha saúde mental.&mldr;</div><a href=/posts/bom-dia-time-como-estamos/>Read more ⟶</a></section><section class=list-item><h1 class=title><a href=/posts/tekton-instalation/>Pipelines com o Tekton - Instalação</a></h1><time>Mar 1, 2021</time><br><div class=description>Deploy Cert Manager kubectl create ns cert-manager helm repo add jetstack https://charts.jetstack.io helm repo update helm install \ cert-manager jetstack/cert-manager \ -n cert-manager \ --version v1.1.0 \ --set installCRDs=true openssl genrsa -out ca.key 2048 openssl req -x509 -new -nodes -key ca.key -subj "/CN=integr8.me" -days 3650 -reqexts v3_req -extensions v3_ca -out ca.crt kubectl create secret tls integr8-ca-key-pair \ -n cert-manager \ --cert=ca.crt \ --key=ca.key \ apiVersion: cert-manager.io/v1 kind: ClusterIssuer metadata: name: integr8me namespace: sandbox spec: ca: secretName: integr8-ca-key-pair crlDistributionPoints: - "https://integr8.&mldr;</div><a href=/posts/tekton-instalation/>Read more ⟶</a></section><section class=list-item><h1 class=title><a href=/posts/tekton-introduction/>Pipelines com o Tekton - Introdução</a></h1><time>Mar 1, 2021</time><br><div class=description>Tekton Características É um projeto Open Source mantido pela CNCF; Todas os elementos são objetos do Kubernetes; É focado em reutilização(TriggerBinding, TriggerTemplate, Pipeline, Task); Seu funcionamento se dá pela implementação de CRDs(Custom Resource Definition) customizados para cada um dos elementos descritos posteriormente. Ecossistema Tekton Triggers - Pacote com os CRDs referentes a escuta de eventos e como respondê-los; Tekton Pipelines - Pacote com os CRDs referentes a construção de tasks, recursos e elementos referentes a pipeline; Tekton Dashboard - Interface para consumir informações de execuções de pipelines; Tekton Hub - Coleção de tasks disponíveis para execução de determinadas tarefas; CLI Tool - Ferramenta de linha de comando para consumir informações e executar ações no ecossistema; Tekton Triggers EventListener - Elemento responsável por interceptar as requisições feitas ao endereço do Ingress; Trigger - Elemento responsável por configurar os gatilhos que ativarão determinadas TriggerTemplates; TriggerBinding - Permite a captura de informações de um evento, e transformação em um parâmetro consumível pela Pipeline; TriggerTemplate - Cria um template de invocação de algum elemento do pacote de pipelines.&mldr;</div><a href=/posts/tekton-introduction/>Read more ⟶</a></section><section class=list-item><h1 class=title><a href=/posts/20170622-instalando-o-virtualbox-no-ubuntu/>Instalando o virtualbox 5.1 no ubuntu</a></h1><time>Jun 22, 2017</time><br><div class=description>Um dos maiores desafios atuais dos desenvolvedores é a implementação agnóstica aos ambientes disponíveis. Mas isso, infelizmente, nem sempre é a realidade, principalmente se você utiliza o Linux em seu desktop ou notebook, e necessita fazer testes em ambientes Windows. Para resolver tais problemas diversos são disponíveis, e grande parte delas envolvem tecnologias de virtualizações de ambientes. Dois são os aplicativos principais no mercado atualmente, o VMWare e o Virtualbox, e por motivos de sinergia entre as ferramentas disponíveis(Vagrant), utilizaremos o VirtualBox.&mldr;</div><a href=/posts/20170622-instalando-o-virtualbox-no-ubuntu/>Read more ⟶</a></section><section class=list-item><h1 class=title><a href=/posts/o-mundo-nao-e-dos-espertos/>O mundo nao é dos espertos</a></h1><time>Jan 1, 0001</time><br><div class=description>Sequence diagram Figure 1. Sequence diagram &mldr;</div><a href=/posts/o-mundo-nao-e-dos-espertos/>Read more ⟶</a></section></main><footer><hr><a class=soc href=https://github.com/fabioluciano/ title=GitHub><i data-feather=github></i></a>|<a class=soc href=https://twitter.com/fabioluciano/ title=Twitter><i data-feather=twitter></i></a>|<a class=soc href=https://me.fabioluciano.dev/ title=Currículo><i data-feather=user></i></a>|⚡️
-2023 Fábio Luciano | <a href=https://github.com/athul/archie>Archie Theme</a> | Built with <a href=https://gohugo.io>Hugo</a></footer><script>feather.replace()</script></div></body></html>
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta name="generator" content="Hugo 0.109.0">
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Fábio Luciano | Home </title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="" />
+	<meta property="og:image" content=""/>
+	<link rel="alternate" type="application/rss+xml" href="https://fabioluciano.dev/index.xml" title="Fábio Luciano" />
+	<meta property="og:title" content="Fábio Luciano" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://fabioluciano.dev/" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Fábio Luciano"/>
+<meta name="twitter:description" content=""/>
+<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+	<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@1,500&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+
+	
+	<link rel="stylesheet" type="text/css" media="screen" href="https://fabioluciano.dev/css/main.2f9b5946627215dc1ae7fa5f82bfc9cfcab000329136befeea5733f21e77d68f.css" />
+		<link rel="stylesheet" type="text/css" href="https://fabioluciano.dev/css/dark.726cd11ca6eb7c4f7d48eb420354f814e5c1b94281aaf8fd0511c1319f7f78a4.css"  />
+	
+	
+	
+</head>
+
+	<body>
+		<div class="content">
+			<header>
+	<div class="main">
+		<a href="https://fabioluciano.dev">Fábio Luciano</a>
+	</div>
+	<nav>
+		
+		<a href="/">Home</a>
+		
+		<a href="/posts">Posts</a>
+		
+		<a href="/about">Sobre</a>
+		
+		<a href="/tags">Tags</a>
+		
+		<a href="https://me.fabioluciano.dev/">Currículo</a>
+		
+	</nav>
+</header>
+
+			
+			<main class="list">
+				<div class="site-description"></div>
+				
+				
+				
+				<section class="list-item">
+					<h1 class="title"><a href="/posts/bom-dia-time-como-estamos/">Bom dia time! Como estamos?</a></h1>
+					<time>Dec 13, 2022</time>
+					<br><div class="description">
+						
+						Há algum tempo venho pensando em escrever sobre o assunto que traterei neste post. A verdade é que ele era para ter sido publicado no mês de setembro, para casar com as mensagens do Setembro Amarelo, mas eu ainda não conseguia escrever sobre. As ideias estavam na cabeça, mas a vontade de escrever não vinha. A verdade é que a ideia de escrever sobre isso veio há dois anos atrás, quando alguns eventos em minha vida profissional me fizeram questionar muitos aspectos sobre a responsabilidade da minha saúde mental.&hellip;
+						
+					</div>
+					<a href="/posts/bom-dia-time-como-estamos/">Read more ⟶</a>
+				</section>
+				
+				<section class="list-item">
+					<h1 class="title"><a href="/posts/tekton-instalation/">Pipelines com o Tekton - Instalação</a></h1>
+					<time>Mar 1, 2021</time>
+					<br><div class="description">
+						
+						Deploy Cert Manager kubectl create ns cert-manager helm repo add jetstack https://charts.jetstack.io helm repo update helm install \ cert-manager jetstack/cert-manager \ -n cert-manager \ --version v1.1.0 \ --set installCRDs=true openssl genrsa -out ca.key 2048 openssl req -x509 -new -nodes -key ca.key -subj &#34;/CN=integr8.me&#34; -days 3650 -reqexts v3_req -extensions v3_ca -out ca.crt kubectl create secret tls integr8-ca-key-pair \ -n cert-manager \ --cert=ca.crt \ --key=ca.key \ apiVersion: cert-manager.io/v1 kind: ClusterIssuer metadata: name: integr8me namespace: sandbox spec: ca: secretName: integr8-ca-key-pair crlDistributionPoints: - &#34;https://integr8.&hellip;
+						
+					</div>
+					<a href="/posts/tekton-instalation/">Read more ⟶</a>
+				</section>
+				
+				<section class="list-item">
+					<h1 class="title"><a href="/posts/tekton-introduction/">Pipelines com o Tekton - Introdução</a></h1>
+					<time>Mar 1, 2021</time>
+					<br><div class="description">
+						
+						Tekton Características É um projeto Open Source mantido pela CNCF; Todas os elementos são objetos do Kubernetes; É focado em reutilização(TriggerBinding, TriggerTemplate, Pipeline, Task); Seu funcionamento se dá pela implementação de CRDs(Custom Resource Definition) customizados para cada um dos elementos descritos posteriormente. Ecossistema Tekton Triggers - Pacote com os CRDs referentes a escuta de eventos e como respondê-los; Tekton Pipelines - Pacote com os CRDs referentes a construção de tasks, recursos e elementos referentes a pipeline; Tekton Dashboard - Interface para consumir informações de execuções de pipelines; Tekton Hub - Coleção de tasks disponíveis para execução de determinadas tarefas; CLI Tool - Ferramenta de linha de comando para consumir informações e executar ações no ecossistema; Tekton Triggers EventListener - Elemento responsável por interceptar as requisições feitas ao endereço do Ingress; Trigger - Elemento responsável por configurar os gatilhos que ativarão determinadas TriggerTemplates; TriggerBinding - Permite a captura de informações de um evento, e transformação em um parâmetro consumível pela Pipeline; TriggerTemplate - Cria um template de invocação de algum elemento do pacote de pipelines.&hellip;
+						
+					</div>
+					<a href="/posts/tekton-introduction/">Read more ⟶</a>
+				</section>
+				
+				<section class="list-item">
+					<h1 class="title"><a href="/posts/20170622-instalando-o-virtualbox-no-ubuntu/">Instalando o virtualbox 5.1 no ubuntu</a></h1>
+					<time>Jun 22, 2017</time>
+					<br><div class="description">
+						
+						Um dos maiores desafios atuais dos desenvolvedores é a implementação agnóstica aos ambientes disponíveis. Mas isso, infelizmente, nem sempre é a realidade, principalmente se você utiliza o Linux em seu desktop ou notebook, e necessita fazer testes em ambientes Windows. Para resolver tais problemas diversos são disponíveis, e grande parte delas envolvem tecnologias de virtualizações de ambientes. Dois são os aplicativos principais no mercado atualmente, o VMWare e o Virtualbox, e por motivos de sinergia entre as ferramentas disponíveis(Vagrant), utilizaremos o VirtualBox.&hellip;
+						
+					</div>
+					<a href="/posts/20170622-instalando-o-virtualbox-no-ubuntu/">Read more ⟶</a>
+				</section>
+				
+				<section class="list-item">
+					<h1 class="title"><a href="/posts/o-mundo-nao-e-dos-espertos/">O mundo nao é dos espertos</a></h1>
+					<time>Jan 1, 0001</time>
+					<br><div class="description">
+						
+						 Sequence diagram Figure 1. Sequence diagram &hellip;
+						
+					</div>
+					<a href="/posts/o-mundo-nao-e-dos-espertos/">Read more ⟶</a>
+				</section>
+				
+				
+
+
+			</main>
+			<footer>
+<hr><a class="soc" href="https://github.com/fabioluciano/" title="GitHub"><i data-feather="github"></i></a>|<a class="soc" href="https://twitter.com/fabioluciano/" title="Twitter"><i data-feather="twitter"></i></a>|<a class="soc" href="https://me.fabioluciano.dev/" title="Currículo"><i data-feather="user"></i></a>|⚡️
+	2023  Fábio Luciano |  <a href="https://github.com/athul/archie">Archie Theme</a> | Built with <a href="https://gohugo.io">Hugo</a>
+</footer>
+
+
+<script>
+      feather.replace()
+</script>
+		</div>
+		
+	</body>
+</html>

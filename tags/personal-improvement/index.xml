@@ -1,1 +1,21 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>personal-improvement on Fábio Luciano</title><link>https://fabioluciano.dev/tags/personal-improvement/</link><description>Recent content in personal-improvement on Fábio Luciano</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright>Fábio Luciano</copyright><lastBuildDate>Tue, 13 Dec 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://fabioluciano.dev/tags/personal-improvement/index.xml" rel="self" type="application/rss+xml"/><item><title>Bom dia time! Como estamos?</title><link>https://fabioluciano.dev/posts/bom-dia-time-como-estamos/</link><pubDate>Tue, 13 Dec 2022 00:00:00 +0000</pubDate><guid>https://fabioluciano.dev/posts/bom-dia-time-como-estamos/</guid><description>Há algum tempo venho pensando em escrever sobre o assunto que traterei neste post. A verdade é que ele era para ter sido publicado no mês de setembro, para casar com as mensagens do Setembro Amarelo, mas eu ainda não conseguia escrever sobre. As ideias estavam na cabeça, mas a vontade de escrever não vinha. A verdade é que a ideia de escrever sobre isso veio há dois anos atrás, quando alguns eventos em minha vida profissional me fizeram questionar muitos aspectos sobre a responsabilidade da minha saúde mental.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>personal-improvement on Fábio Luciano</title>
+    <link>https://fabioluciano.dev/tags/personal-improvement/</link>
+    <description>Recent content in personal-improvement on Fábio Luciano</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Fábio Luciano</copyright>
+    <lastBuildDate>Tue, 13 Dec 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://fabioluciano.dev/tags/personal-improvement/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Bom dia time! Como estamos?</title>
+      <link>https://fabioluciano.dev/posts/bom-dia-time-como-estamos/</link>
+      <pubDate>Tue, 13 Dec 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://fabioluciano.dev/posts/bom-dia-time-como-estamos/</guid>
+      <description>Há algum tempo venho pensando em escrever sobre o assunto que traterei neste post. A verdade é que ele era para ter sido publicado no mês de setembro, para casar com as mensagens do Setembro Amarelo, mas eu ainda não conseguia escrever sobre. As ideias estavam na cabeça, mas a vontade de escrever não vinha. A verdade é que a ideia de escrever sobre isso veio há dois anos atrás, quando alguns eventos em minha vida profissional me fizeram questionar muitos aspectos sobre a responsabilidade da minha saúde mental.</description>
+    </item>
+    
+  </channel>
+</rss>

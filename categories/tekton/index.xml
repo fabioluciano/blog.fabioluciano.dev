@@ -1,1 +1,30 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>tekton on Fábio Luciano</title><link>https://fabioluciano.dev/categories/tekton/</link><description>Recent content in tekton on Fábio Luciano</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright>Fábio Luciano</copyright><lastBuildDate>Mon, 01 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://fabioluciano.dev/categories/tekton/index.xml" rel="self" type="application/rss+xml"/><item><title>Pipelines com o Tekton - Instalação</title><link>https://fabioluciano.dev/posts/tekton-instalation/</link><pubDate>Mon, 01 Mar 2021 00:00:00 +0000</pubDate><guid>https://fabioluciano.dev/posts/tekton-instalation/</guid><description>Deploy Cert Manager kubectl create ns cert-manager helm repo add jetstack https://charts.jetstack.io helm repo update helm install \ cert-manager jetstack/cert-manager \ -n cert-manager \ --version v1.1.0 \ --set installCRDs=true openssl genrsa -out ca.key 2048 openssl req -x509 -new -nodes -key ca.key -subj &amp;#34;/CN=integr8.me&amp;#34; -days 3650 -reqexts v3_req -extensions v3_ca -out ca.crt kubectl create secret tls integr8-ca-key-pair \ -n cert-manager \ --cert=ca.crt \ --key=ca.key \ apiVersion: cert-manager.io/v1 kind: ClusterIssuer metadata: name: integr8me namespace: sandbox spec: ca: secretName: integr8-ca-key-pair crlDistributionPoints: - &amp;#34;https://integr8.</description></item><item><title>Pipelines com o Tekton - Introdução</title><link>https://fabioluciano.dev/posts/tekton-introduction/</link><pubDate>Mon, 01 Mar 2021 00:00:00 +0000</pubDate><guid>https://fabioluciano.dev/posts/tekton-introduction/</guid><description>Tekton Características É um projeto Open Source mantido pela CNCF; Todas os elementos são objetos do Kubernetes; É focado em reutilização(TriggerBinding, TriggerTemplate, Pipeline, Task); Seu funcionamento se dá pela implementação de CRDs(Custom Resource Definition) customizados para cada um dos elementos descritos posteriormente. Ecossistema Tekton Triggers - Pacote com os CRDs referentes a escuta de eventos e como respondê-los; Tekton Pipelines - Pacote com os CRDs referentes a construção de tasks, recursos e elementos referentes a pipeline; Tekton Dashboard - Interface para consumir informações de execuções de pipelines; Tekton Hub - Coleção de tasks disponíveis para execução de determinadas tarefas; CLI Tool - Ferramenta de linha de comando para consumir informações e executar ações no ecossistema; Tekton Triggers EventListener - Elemento responsável por interceptar as requisições feitas ao endereço do Ingress; Trigger - Elemento responsável por configurar os gatilhos que ativarão determinadas TriggerTemplates; TriggerBinding - Permite a captura de informações de um evento, e transformação em um parâmetro consumível pela Pipeline; TriggerTemplate - Cria um template de invocação de algum elemento do pacote de pipelines.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>tekton on Fábio Luciano</title>
+    <link>https://fabioluciano.dev/categories/tekton/</link>
+    <description>Recent content in tekton on Fábio Luciano</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Fábio Luciano</copyright>
+    <lastBuildDate>Mon, 01 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://fabioluciano.dev/categories/tekton/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Pipelines com o Tekton - Instalação</title>
+      <link>https://fabioluciano.dev/posts/tekton-instalation/</link>
+      <pubDate>Mon, 01 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://fabioluciano.dev/posts/tekton-instalation/</guid>
+      <description>Deploy Cert Manager kubectl create ns cert-manager helm repo add jetstack https://charts.jetstack.io helm repo update helm install \ cert-manager jetstack/cert-manager \ -n cert-manager \ --version v1.1.0 \ --set installCRDs=true openssl genrsa -out ca.key 2048 openssl req -x509 -new -nodes -key ca.key -subj &amp;#34;/CN=integr8.me&amp;#34; -days 3650 -reqexts v3_req -extensions v3_ca -out ca.crt kubectl create secret tls integr8-ca-key-pair \ -n cert-manager \ --cert=ca.crt \ --key=ca.key \ apiVersion: cert-manager.io/v1 kind: ClusterIssuer metadata: name: integr8me namespace: sandbox spec: ca: secretName: integr8-ca-key-pair crlDistributionPoints: - &amp;#34;https://integr8.</description>
+    </item>
+    
+    <item>
+      <title>Pipelines com o Tekton - Introdução</title>
+      <link>https://fabioluciano.dev/posts/tekton-introduction/</link>
+      <pubDate>Mon, 01 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://fabioluciano.dev/posts/tekton-introduction/</guid>
+      <description>Tekton Características É um projeto Open Source mantido pela CNCF; Todas os elementos são objetos do Kubernetes; É focado em reutilização(TriggerBinding, TriggerTemplate, Pipeline, Task); Seu funcionamento se dá pela implementação de CRDs(Custom Resource Definition) customizados para cada um dos elementos descritos posteriormente. Ecossistema Tekton Triggers - Pacote com os CRDs referentes a escuta de eventos e como respondê-los; Tekton Pipelines - Pacote com os CRDs referentes a construção de tasks, recursos e elementos referentes a pipeline; Tekton Dashboard - Interface para consumir informações de execuções de pipelines; Tekton Hub - Coleção de tasks disponíveis para execução de determinadas tarefas; CLI Tool - Ferramenta de linha de comando para consumir informações e executar ações no ecossistema; Tekton Triggers EventListener - Elemento responsável por interceptar as requisições feitas ao endereço do Ingress; Trigger - Elemento responsável por configurar os gatilhos que ativarão determinadas TriggerTemplates; TriggerBinding - Permite a captura de informações de um evento, e transformação em um parâmetro consumível pela Pipeline; TriggerTemplate - Cria um template de invocação de algum elemento do pacote de pipelines.</description>
+    </item>
+    
+  </channel>
+</rss>
