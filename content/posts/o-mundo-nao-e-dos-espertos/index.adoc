@@ -6,7 +6,7 @@ slug: o-mundo-nao-e-dos-espertos
 
 == Sequence diagram
 
-[plantuml,"plantuml-sequence-diagram-example",svg]
+[plantuml,"plantuml-sequence-diagram-example", png]
 .Sequence diagram
 ----
 actor Foo1
