@@ -2,11 +2,10 @@
 title: O mundo nao é dos espertos
 slug: o-mundo-nao-e-dos-espertos
 ---
-:imagesoutdir: content/posts/o-mundo-nao-e-dos-espertos
 
 == Sequence diagram
 
-[plantuml,"plantuml-sequence-diagram-example", png]
+[plantuml,"plantuml-sequence-diagram-example"]
 .Sequence diagram
 ----
 actor Foo1

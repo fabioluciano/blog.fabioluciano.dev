@@ -4,3 +4,4 @@ public
 .asciidoctor/
 .hugo_build.lock
 content/posts/**/plantuml-**
+resources
