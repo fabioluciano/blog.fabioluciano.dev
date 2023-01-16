@@ -1,66 +1,409 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Fábio Luciano</title>
-    <link>https://fabioluciano.dev/</link>
-    <description>Recent content on Fábio Luciano</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <copyright>Fábio Luciano</copyright>
-    <lastBuildDate>Tue, 13 Dec 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://fabioluciano.dev/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Bom dia time! Como estamos?</title>
-      <link>https://fabioluciano.dev/posts/bom-dia-time-como-estamos/</link>
-      <pubDate>Tue, 13 Dec 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://fabioluciano.dev/posts/bom-dia-time-como-estamos/</guid>
-      <description>Há algum tempo venho pensando em escrever sobre o assunto que traterei neste post. A verdade é que ele era para ter sido publicado no mês de setembro, para casar com as mensagens do Setembro Amarelo, mas eu ainda não conseguia escrever sobre. As ideias estavam na cabeça, mas a vontade de escrever não vinha. A verdade é que a ideia de escrever sobre isso veio há dois anos atrás, quando alguns eventos em minha vida profissional me fizeram questionar muitos aspectos sobre a responsabilidade da minha saúde mental.</description>
-    </item>
-    
-    <item>
-      <title>Pipelines com o Tekton - Instalação</title>
-      <link>https://fabioluciano.dev/posts/tekton-instalation/</link>
-      <pubDate>Mon, 01 Mar 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://fabioluciano.dev/posts/tekton-instalation/</guid>
-      <description>Deploy Cert Manager kubectl create ns cert-manager helm repo add jetstack https://charts.jetstack.io helm repo update helm install \ cert-manager jetstack/cert-manager \ -n cert-manager \ --version v1.1.0 \ --set installCRDs=true openssl genrsa -out ca.key 2048 openssl req -x509 -new -nodes -key ca.key -subj &amp;#34;/CN=integr8.me&amp;#34; -days 3650 -reqexts v3_req -extensions v3_ca -out ca.crt kubectl create secret tls integr8-ca-key-pair \ -n cert-manager \ --cert=ca.crt \ --key=ca.key \ apiVersion: cert-manager.io/v1 kind: ClusterIssuer metadata: name: integr8me namespace: sandbox spec: ca: secretName: integr8-ca-key-pair crlDistributionPoints: - &amp;#34;https://integr8.</description>
-    </item>
-    
-    <item>
-      <title>Pipelines com o Tekton - Introdução</title>
-      <link>https://fabioluciano.dev/posts/tekton-introduction/</link>
-      <pubDate>Mon, 01 Mar 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://fabioluciano.dev/posts/tekton-introduction/</guid>
-      <description>Tekton Características É um projeto Open Source mantido pela CNCF; Todas os elementos são objetos do Kubernetes; É focado em reutilização(TriggerBinding, TriggerTemplate, Pipeline, Task); Seu funcionamento se dá pela implementação de CRDs(Custom Resource Definition) customizados para cada um dos elementos descritos posteriormente. Ecossistema Tekton Triggers - Pacote com os CRDs referentes a escuta de eventos e como respondê-los; Tekton Pipelines - Pacote com os CRDs referentes a construção de tasks, recursos e elementos referentes a pipeline; Tekton Dashboard - Interface para consumir informações de execuções de pipelines; Tekton Hub - Coleção de tasks disponíveis para execução de determinadas tarefas; CLI Tool - Ferramenta de linha de comando para consumir informações e executar ações no ecossistema; Tekton Triggers EventListener - Elemento responsável por interceptar as requisições feitas ao endereço do Ingress; Trigger - Elemento responsável por configurar os gatilhos que ativarão determinadas TriggerTemplates; TriggerBinding - Permite a captura de informações de um evento, e transformação em um parâmetro consumível pela Pipeline; TriggerTemplate - Cria um template de invocação de algum elemento do pacote de pipelines.</description>
-    </item>
-    
-    <item>
-      <title>Instalando o virtualbox 5.1 no ubuntu</title>
-      <link>https://fabioluciano.dev/posts/20170622-instalando-o-virtualbox-no-ubuntu/</link>
-      <pubDate>Thu, 22 Jun 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://fabioluciano.dev/posts/20170622-instalando-o-virtualbox-no-ubuntu/</guid>
-      <description>Um dos maiores desafios atuais dos desenvolvedores é a implementação agnóstica aos ambientes disponíveis. Mas isso, infelizmente, nem sempre é a realidade, principalmente se você utiliza o Linux em seu desktop ou notebook, e necessita fazer testes em ambientes Windows. Para resolver tais problemas diversos são disponíveis, e grande parte delas envolvem tecnologias de virtualizações de ambientes. Dois são os aplicativos principais no mercado atualmente, o VMWare e o Virtualbox, e por motivos de sinergia entre as ferramentas disponíveis(Vagrant), utilizaremos o VirtualBox.</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://fabioluciano.dev/about/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://fabioluciano.dev/about/</guid>
-      <description>Sobre </description>
-    </item>
-    
-    <item>
-      <title>O mundo nao é dos espertos</title>
-      <link>https://fabioluciano.dev/posts/o-mundo-nao-e-dos-espertos/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://fabioluciano.dev/posts/o-mundo-nao-e-dos-espertos/</guid>
-      <description> Sequence diagram Figure 1. Sequence diagram </description>
-    </item>
-    
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Fábio Luciano</title><link>https://fabioluciano.dev/</link><description>Recent content on Fábio Luciano</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright>Fábio Luciano</copyright><lastBuildDate>Tue, 13 Dec 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://fabioluciano.dev/index.xml" rel="self" type="application/rss+xml"/><item><title>Bom dia time! Como estamos?</title><link>https://fabioluciano.dev/posts/bom-dia-time-como-estamos/</link><pubDate>Tue, 13 Dec 2022 00:00:00 +0000</pubDate><guid>https://fabioluciano.dev/posts/bom-dia-time-como-estamos/</guid><description>&lt;div class="paragraph">
+&lt;p>Há algum tempo venho pensando em escrever sobre o assunto que traterei neste post. A verdade é que ele era para ter sido publicado no mês de setembro, para casar com as mensagens do &lt;strong>Setembro Amarelo&lt;/strong>, mas eu ainda não conseguia escrever sobre. As ideias estavam na cabeça, mas a vontade de escrever não vinha. A verdade é que a ideia de escrever sobre isso veio há dois anos atrás, quando alguns eventos em minha vida profissional me fizeram questionar muitos aspectos sobre a responsabilidade da minha saúde mental.&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>Tudo o que escrevo aqui é baseado em minha própria experiência no assunto, sem algum tipo de pretensão de ser&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>Eu convivo com a depressão a pouco mais de 10 anos agora. Já foi muito ruim, não que hoje não seja, mas você aprende a conviver com esta realidade.&lt;/p>
+&lt;/div></description></item><item><title>Pipelines com o Tekton - Instalação</title><link>https://fabioluciano.dev/posts/tekton-instalation/</link><pubDate>Mon, 01 Mar 2021 00:00:00 +0000</pubDate><guid>https://fabioluciano.dev/posts/tekton-instalation/</guid><description>&lt;h2 id="deploy-cert-manager">Deploy Cert Manager&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">kubectl create ns cert-manager
+helm repo add jetstack https://charts.jetstack.io
+helm repo update
+helm install &lt;span style="color:#f1fa8c">\
+&lt;/span>&lt;span style="color:#f1fa8c">&lt;/span> cert-manager jetstack/cert-manager &lt;span style="color:#f1fa8c">\
+&lt;/span>&lt;span style="color:#f1fa8c">&lt;/span> -n cert-manager &lt;span style="color:#f1fa8c">\
+&lt;/span>&lt;span style="color:#f1fa8c">&lt;/span> --version v1.1.0 &lt;span style="color:#f1fa8c">\
+&lt;/span>&lt;span style="color:#f1fa8c">&lt;/span> --set &lt;span style="color:#8be9fd;font-style:italic">installCRDs&lt;/span>&lt;span style="color:#ff79c6">=&lt;/span>&lt;span style="color:#8be9fd;font-style:italic">true&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">openssl genrsa -out ca.key &lt;span style="color:#bd93f9">2048&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">openssl req -x509 -new -nodes -key ca.key -subj &lt;span style="color:#f1fa8c">&amp;#34;/CN=integr8.me&amp;#34;&lt;/span> -days &lt;span style="color:#bd93f9">3650&lt;/span> -reqexts v3_req -extensions v3_ca -out ca.crt
+&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">kubectl create secret tls integr8-ca-key-pair &lt;span style="color:#f1fa8c">\
+&lt;/span>&lt;span style="color:#f1fa8c">&lt;/span> -n cert-manager &lt;span style="color:#f1fa8c">\
+&lt;/span>&lt;span style="color:#f1fa8c">&lt;/span> --cert&lt;span style="color:#ff79c6">=&lt;/span>ca.crt &lt;span style="color:#f1fa8c">\
+&lt;/span>&lt;span style="color:#f1fa8c">&lt;/span> --key&lt;span style="color:#ff79c6">=&lt;/span>ca.key &lt;span style="color:#f1fa8c">\
+&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-yml" data-lang="yml">&lt;span style="color:#ff79c6">apiVersion&lt;/span>: cert-manager.io/v1
+&lt;span style="color:#ff79c6">kind&lt;/span>: ClusterIssuer
+&lt;span style="color:#ff79c6">metadata&lt;/span>:
+&lt;span style="color:#ff79c6">name&lt;/span>: integr8me
+&lt;span style="color:#ff79c6">namespace&lt;/span>: sandbox
+&lt;span style="color:#ff79c6">spec&lt;/span>:
+&lt;span style="color:#ff79c6">ca&lt;/span>:
+&lt;span style="color:#ff79c6">secretName&lt;/span>: integr8-ca-key-pair
+&lt;span style="color:#ff79c6">crlDistributionPoints&lt;/span>:
+- &lt;span style="color:#f1fa8c">&amp;#34;https://integr8.me&amp;#34;&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">kubectl apply &lt;span style="color:#f1fa8c">\
+&lt;/span>&lt;span style="color:#f1fa8c">&lt;/span> -n cert-manager &lt;span style="color:#f1fa8c">\
+&lt;/span>&lt;span style="color:#f1fa8c">&lt;/span> -f cert-manager-cluster-issuer.yml
+&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">kubectl create ns tekton-pipelines
+kubectl apply &lt;span style="color:#f1fa8c">\
+&lt;/span>&lt;span style="color:#f1fa8c">&lt;/span> -n tekton-pipelines &lt;span style="color:#f1fa8c">\
+&lt;/span>&lt;span style="color:#f1fa8c">&lt;/span> -f https://storage.googleapis.com/tekton-releases/pipeline/latest/release.yaml &lt;span style="color:#f1fa8c">\
+&lt;/span>&lt;span style="color:#f1fa8c">&lt;/span> -f https://storage.googleapis.com/tekton-releases/triggers/latest/release.yaml &lt;span style="color:#f1fa8c">\
+&lt;/span>&lt;span style="color:#f1fa8c">&lt;/span> -f https://github.com/tektoncd/dashboard/releases/latest/download/tekton-dashboard-release.yaml &lt;span style="color:#f1fa8c">\
+&lt;/span>&lt;span style="color:#f1fa8c">&lt;/span> -f tekton-ingress-dashboard.yml
+&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback">kubectl create ns tekton-builds
+kubectl apply -n tekton-builds -f rbac-and-account.yml
+&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-yml" data-lang="yml">&lt;span style="color:#ff79c6">apiVersion&lt;/span>: v1
+&lt;span style="color:#ff79c6">kind&lt;/span>: ServiceAccount
+&lt;span style="color:#ff79c6">metadata&lt;/span>:
+&lt;span style="color:#ff79c6">name&lt;/span>: tekton-triggers-sa
+&lt;span style="color:#ff79c6">secrets&lt;/span>:
+- &lt;span style="color:#ff79c6">name&lt;/span>: gh-token
+---
+&lt;span style="color:#ff79c6">apiVersion&lt;/span>: rbac.authorization.k8s.io/v1
+&lt;span style="color:#ff79c6">kind&lt;/span>: Role
+&lt;span style="color:#ff79c6">metadata&lt;/span>:
+&lt;span style="color:#ff79c6">name&lt;/span>: tekton-triggers-roles
+&lt;span style="color:#ff79c6">rules&lt;/span>:
+- &lt;span style="color:#ff79c6">apiGroups&lt;/span>: [&lt;span style="color:#f1fa8c">&amp;#34;triggers.tekton.dev&amp;#34;&lt;/span>]
+&lt;span style="color:#ff79c6">resources&lt;/span>:
+[&lt;span style="color:#f1fa8c">&amp;#34;eventlisteners&amp;#34;&lt;/span>, &lt;span style="color:#f1fa8c">&amp;#34;triggerbindings&amp;#34;&lt;/span>, &lt;span style="color:#f1fa8c">&amp;#34;triggertemplates&amp;#34;&lt;/span>, &lt;span style="color:#f1fa8c">&amp;#34;triggers&amp;#34;&lt;/span>]
+&lt;span style="color:#ff79c6">verbs&lt;/span>: [&lt;span style="color:#f1fa8c">&amp;#34;get&amp;#34;&lt;/span>, &lt;span style="color:#f1fa8c">&amp;#34;list&amp;#34;&lt;/span>, &lt;span style="color:#f1fa8c">&amp;#34;watch&amp;#34;&lt;/span>]
+- &lt;span style="color:#ff79c6">apiGroups&lt;/span>: [&lt;span style="color:#f1fa8c">&amp;#34;&amp;#34;&lt;/span>]
+&lt;span style="color:#ff79c6">resources&lt;/span>: [&lt;span style="color:#f1fa8c">&amp;#34;configmaps&amp;#34;&lt;/span>, &lt;span style="color:#f1fa8c">&amp;#34;secrets&amp;#34;&lt;/span>]
+&lt;span style="color:#ff79c6">verbs&lt;/span>: [&lt;span style="color:#f1fa8c">&amp;#34;get&amp;#34;&lt;/span>, &lt;span style="color:#f1fa8c">&amp;#34;list&amp;#34;&lt;/span>, &lt;span style="color:#f1fa8c">&amp;#34;watch&amp;#34;&lt;/span>]
+- &lt;span style="color:#ff79c6">apiGroups&lt;/span>: [&lt;span style="color:#f1fa8c">&amp;#34;tekton.dev&amp;#34;&lt;/span>]
+&lt;span style="color:#ff79c6">resources&lt;/span>: [&lt;span style="color:#f1fa8c">&amp;#34;pipelineruns&amp;#34;&lt;/span>, &lt;span style="color:#f1fa8c">&amp;#34;pipelineresources&amp;#34;&lt;/span>, &lt;span style="color:#f1fa8c">&amp;#34;taskruns&amp;#34;&lt;/span>]
+&lt;span style="color:#ff79c6">verbs&lt;/span>: [&lt;span style="color:#f1fa8c">&amp;#34;create&amp;#34;&lt;/span>]
+- &lt;span style="color:#ff79c6">apiGroups&lt;/span>: [&lt;span style="color:#f1fa8c">&amp;#34;&amp;#34;&lt;/span>]
+&lt;span style="color:#ff79c6">resources&lt;/span>: [&lt;span style="color:#f1fa8c">&amp;#34;serviceaccounts&amp;#34;&lt;/span>]
+&lt;span style="color:#ff79c6">verbs&lt;/span>: [&lt;span style="color:#f1fa8c">&amp;#34;impersonate&amp;#34;&lt;/span>]
+- &lt;span style="color:#ff79c6">apiGroups&lt;/span>: [&lt;span style="color:#f1fa8c">&amp;#34;policy&amp;#34;&lt;/span>]
+&lt;span style="color:#ff79c6">resources&lt;/span>: [&lt;span style="color:#f1fa8c">&amp;#34;podsecuritypolicies&amp;#34;&lt;/span>]
+&lt;span style="color:#ff79c6">resourceNames&lt;/span>: [&lt;span style="color:#f1fa8c">&amp;#34;tekton-triggers&amp;#34;&lt;/span>]
+&lt;span style="color:#ff79c6">verbs&lt;/span>: [&lt;span style="color:#f1fa8c">&amp;#34;use&amp;#34;&lt;/span>]
+---
+&lt;span style="color:#ff79c6">apiVersion&lt;/span>: rbac.authorization.k8s.io/v1
+&lt;span style="color:#ff79c6">kind&lt;/span>: RoleBinding
+&lt;span style="color:#ff79c6">metadata&lt;/span>:
+&lt;span style="color:#ff79c6">name&lt;/span>: tekton-triggers-binding
+&lt;span style="color:#ff79c6">subjects&lt;/span>:
+- &lt;span style="color:#ff79c6">kind&lt;/span>: ServiceAccount
+&lt;span style="color:#ff79c6">name&lt;/span>: tekton-triggers-sa
+&lt;span style="color:#ff79c6">roleRef&lt;/span>:
+&lt;span style="color:#ff79c6">apiGroup&lt;/span>: rbac.authorization.k8s.io
+&lt;span style="color:#ff79c6">kind&lt;/span>: Role
+&lt;span style="color:#ff79c6">name&lt;/span>: tekton-triggers-roles
+---
+&lt;span style="color:#ff79c6">kind&lt;/span>: ClusterRole
+&lt;span style="color:#ff79c6">apiVersion&lt;/span>: rbac.authorization.k8s.io/v1
+&lt;span style="color:#ff79c6">metadata&lt;/span>:
+&lt;span style="color:#ff79c6">name&lt;/span>: tekton-triggers-clusterrole
+&lt;span style="color:#ff79c6">rules&lt;/span>:
+- &lt;span style="color:#ff79c6">apiGroups&lt;/span>: [&lt;span style="color:#f1fa8c">&amp;#34;triggers.tekton.dev&amp;#34;&lt;/span>]
+&lt;span style="color:#ff79c6">resources&lt;/span>: [&lt;span style="color:#f1fa8c">&amp;#34;clustertriggerbindings&amp;#34;&lt;/span>]
+&lt;span style="color:#ff79c6">verbs&lt;/span>: [&lt;span style="color:#f1fa8c">&amp;#34;get&amp;#34;&lt;/span>, &lt;span style="color:#f1fa8c">&amp;#34;list&amp;#34;&lt;/span>, &lt;span style="color:#f1fa8c">&amp;#34;watch&amp;#34;&lt;/span>]
+---
+&lt;span style="color:#ff79c6">apiVersion&lt;/span>: rbac.authorization.k8s.io/v1
+&lt;span style="color:#ff79c6">kind&lt;/span>: ClusterRoleBinding
+&lt;span style="color:#ff79c6">metadata&lt;/span>:
+&lt;span style="color:#ff79c6">name&lt;/span>: tekton-triggers-clusterrolebinding
+&lt;span style="color:#ff79c6">subjects&lt;/span>:
+- &lt;span style="color:#ff79c6">kind&lt;/span>: ServiceAccount
+&lt;span style="color:#ff79c6">name&lt;/span>: tekton-triggers-sa
+&lt;span style="color:#ff79c6">namespace&lt;/span>: tekton-builds
+&lt;span style="color:#ff79c6">roleRef&lt;/span>:
+&lt;span style="color:#ff79c6">apiGroup&lt;/span>: rbac.authorization.k8s.io
+&lt;span style="color:#ff79c6">kind&lt;/span>: ClusterRole
+&lt;span style="color:#ff79c6">name&lt;/span>: tekton-triggers-clusterrole
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Pipelines com o Tekton - Introdução</title><link>https://fabioluciano.dev/posts/tekton-introduction/</link><pubDate>Mon, 01 Mar 2021 00:00:00 +0000</pubDate><guid>https://fabioluciano.dev/posts/tekton-introduction/</guid><description>
+&lt;div class="sect1">
+&lt;h2 id="_características">&lt;a class="anchor" href="#_características">&lt;/a>&lt;a class="link" href="#_características">Características&lt;/a>&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>É um projeto Open Source mantido pela CNCF&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Todas os elementos são objetos do Kubernetes&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>É focado em reutilização(&lt;code>TriggerBinding&lt;/code>, &lt;code>TriggerTemplate&lt;/code>, &lt;code>Pipeline&lt;/code>, &lt;code>Task&lt;/code>)&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Seu funcionamento se dá pela implementação de `CRD`s(Custom Resource Definition) customizados para cada um dos elementos descritos posteriormente.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;hr/>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_ecossistema">&lt;a class="anchor" href="#_ecossistema">&lt;/a>&lt;a class="link" href="#_ecossistema">Ecossistema&lt;/a>&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>&lt;a href="https://tekton.dev/docs/triggers/">Tekton Triggers&lt;/a> - Pacote com os &lt;code>CRDs&lt;/code> referentes a escuta de eventos e como respondê-los;&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>[Tekton Pipelines](&lt;a href="https://tekton.dev/docs/pipelines/" class="bare">https://tekton.dev/docs/pipelines/&lt;/a>) - Pacote com os &lt;code>CRDs&lt;/code> referentes a construção de tasks, recursos e elementos referentes a pipeline;&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>[Tekton Dashboard](&lt;a href="https://tekton.dev/docs/dashboard/" class="bare">https://tekton.dev/docs/dashboard/&lt;/a>) - Interface para consumir informações de execuções de pipelines;&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>[Tekton Hub](&lt;a href="https://hub-preview.tekton.dev/" class="bare">https://hub-preview.tekton.dev/&lt;/a>) - Coleção de tasks disponíveis para execução de determinadas tarefas;&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>[CLI Tool](&lt;a href="https://tekton.dev/docs/cli/" class="bare">https://tekton.dev/docs/cli/&lt;/a>) - Ferramenta de linha de comando para consumir informações e executar ações no ecossistema;&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;hr/>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_tekton_triggers">&lt;a class="anchor" href="#_tekton_triggers">&lt;/a>&lt;a class="link" href="#_tekton_triggers">Tekton Triggers&lt;/a>&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>[EventListener](&lt;a href="https://tekton.dev/docs/triggers/eventlisteners/" class="bare">https://tekton.dev/docs/triggers/eventlisteners/&lt;/a>) - Elemento responsável por interceptar as requisições feitas ao endereço do &lt;code>Ingress&lt;/code>;&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>[Trigger](&lt;a href="https://tekton.dev/docs/triggers/triggers/" class="bare">https://tekton.dev/docs/triggers/triggers/&lt;/a>) - Elemento responsável por configurar os gatilhos que ativarão determinadas `TriggerTemplate`s;&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>[TriggerBinding](&lt;a href="https://tekton.dev/docs/triggers/triggerbindings/" class="bare">https://tekton.dev/docs/triggers/triggerbindings/&lt;/a>) - Permite a captura de informações de um evento, e transformação em um parâmetro consumível pela &lt;code>Pipeline&lt;/code>;&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>[TriggerTemplate](&lt;a href="https://tekton.dev/docs/triggers/triggertemplates/" class="bare">https://tekton.dev/docs/triggers/triggertemplates/&lt;/a>) - Cria um template de invocação de algum elemento do pacote de pipelines. (Eg. &lt;code>PipelineRun&lt;/code>, &lt;code>TaskRun&lt;/code>).&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;hr/>
+&lt;div class="sect2">
+&lt;h3 id="_eventlistener">&lt;a class="anchor" href="#_eventlistener">&lt;/a>&lt;a class="link" href="#_eventlistener">EventListener&lt;/a>&lt;/h3>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>Cria uma &lt;code>Service&lt;/code> que pode ser anexado a um &lt;code>Ingress&lt;/code> para receber requisições externas (eg. Endereço utilizado no &lt;code>webhook&lt;/code> do repositório);&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>É a entidade que aglomerá os &lt;code>Trigger`s que tratarão as requisições ao `EventListener&lt;/code>.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;hr/>
+&lt;/div>
+&lt;div class="sect2">
+&lt;h3 id="_trigger">&lt;a class="anchor" href="#_trigger">&lt;/a>&lt;a class="link" href="#_trigger">Trigger&lt;/a>&lt;/h3>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>O chaveamento entre qual pipeline deve ser executada é feito utilizando `interceptor`s;&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Por padrão possui interceptors para &lt;code>Github&lt;/code>, &lt;code>Gitlab&lt;/code>, &lt;code>Github&lt;/code> e &lt;code>CEL&lt;/code>.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>O interceptor &lt;code>CEL&lt;/code> é o mais versátil, definindo filtros e overlays às informações.&lt;/p>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>Filtros&lt;/strong>: Informa quais campos da requisição vai disparar o gatilho. (eg. &lt;code>&amp;#34;header.match(&amp;#39;X-GitHub-Event&amp;#39;, &amp;#39;pull_request&amp;#39;)&amp;#34;&lt;/code>);&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Overlays&lt;/strong>: Executa transformações em campos da requisição, para consumo na pipeline. (eg. &lt;code>&amp;#34;body.pull_request.head.sha.truncate(7)&amp;#34;&lt;/code>).&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;hr/>
+&lt;/div>
+&lt;div class="sect2">
+&lt;h3 id="_triggerbinding">&lt;a class="anchor" href="#_triggerbinding">&lt;/a>&lt;a class="link" href="#_triggerbinding">TriggerBinding&lt;/a>&lt;/h3>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>Traduz campos da requisição para parâmetros que serão consumidos na pipeline.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Os campos do envolope &lt;code>HTTP&lt;/code> disponíveis são os &lt;code>Headers&lt;/code> e &lt;code>Body&lt;/code>.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;div class="listingblock">
+&lt;div class="content">
+&lt;pre class="highlightjs highlight">&lt;code class="language-yaml hljs" data-lang="yaml">* name: triggered-event
+value: $(header.X-Github-Event)
+* name: event-action
+value: $(body.action)&lt;/code>&lt;/pre>
+&lt;/div>
+&lt;/div>
+&lt;hr/>
+&lt;/div>
+&lt;div class="sect2">
+&lt;h3 id="_triggertemplate">&lt;a class="anchor" href="#_triggertemplate">&lt;/a>&lt;a class="link" href="#_triggertemplate">TriggerTemplate&lt;/a>&lt;/h3>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>Neste objeto são configurados os templates padrão para cada evento disparado em um dos &lt;code>Triggers&lt;/code>;&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Recebe os parâmetros de uma &lt;code>TriggerBinding&lt;/code> e os atribui a um &lt;code>PipelineRun&lt;/code> ou &lt;code>TaskRun&lt;/code>;&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;div class="imageblock">
+&lt;div class="content">
+&lt;img src="plantuml-tekton-workflow.png" alt="plantuml tekton workflow" width="269" height="189"/>
+&lt;/div>
+&lt;div class="title">Tekton workflow diagram&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_tekton_pipelines">&lt;a class="anchor" href="#_tekton_pipelines">&lt;/a>&lt;a class="link" href="#_tekton_pipelines">Tekton Pipelines&lt;/a>&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>[Pipeline](&lt;a href="https://tekton.dev/docs/pipelines/pipelines/" class="bare">https://tekton.dev/docs/pipelines/pipelines/&lt;/a>) - Objeto que agrupa `Task`s comuns à pipeline;&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>[PipelineRun](&lt;a href="https://tekton.dev/docs/pipelines/pipelineruns/" class="bare">https://tekton.dev/docs/pipelines/pipelineruns/&lt;/a>) - Instancia e executa uma &lt;code>Pipeline&lt;/code>;&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>[PipelineResource](&lt;a href="https://tekton.dev/docs/pipelines/resources/" class="bare">https://tekton.dev/docs/pipelines/resources/&lt;/a>) - Objetos que serão utilizados como entradas/saídas de uma &lt;code>Task&lt;/code>;&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>[Task](&lt;a href="https://tekton.dev/docs/pipelines/tasks/" class="bare">https://tekton.dev/docs/pipelines/tasks/&lt;/a>) - É uma coleção de &lt;code>Steps&lt;/code> a serem executados para conclusão de uma determinada tarefa;&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>[TaskRun](&lt;a href="https://tekton.dev/docs/pipelines/taskruns/" class="bare">https://tekton.dev/docs/pipelines/taskruns/&lt;/a>) - Instancia e executa uma determinada &lt;code>Task&lt;/code>;&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;hr/>
+&lt;div class="sect2">
+&lt;h3 id="_pipeline">&lt;a class="anchor" href="#_pipeline">&lt;/a>&lt;a class="link" href="#_pipeline">Pipeline&lt;/a>&lt;/h3>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>Agrupa &lt;code>Tasks&lt;/code> para um fim específico;&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Os parâmetros são inputados por um objeto &lt;code>PipelineRun&lt;/code>;&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Pode possuir recursos que são esperados.(Eg. repositório, pullrequest, imagem docker)&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Vários repositórios podem consumir a mesma pipeline, com parâmetros diferentes.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Os volumes, utilizados para transição de informações entre &lt;code>Tasks&lt;/code> são denominados workspaces.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Workspaces podem ser utilizados para reutilizar bibliotecas e acelerar o processo de build (node_modules(nodejs/frontend), .terraform(:P), .m2(JAVA), vendor(PHP))&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;hr/>
+&lt;/div>
+&lt;div class="sect2">
+&lt;h3 id="_pipelineresource">&lt;a class="anchor" href="#_pipelineresource">&lt;/a>&lt;a class="link" href="#_pipelineresource">PipelineResource&lt;/a>&lt;/h3>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>Ajudam a abstrair os recursos consumidos por uma &lt;code>Pipeline&lt;/code>/&lt;code>Task&lt;/code>;&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Podem ser de entrada(input), ou de saída(output);&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Podem ser dos tipos: &lt;code>Git&lt;/code>, &lt;code>PullRequest&lt;/code>, &lt;code>Image&lt;/code>, &lt;code>Cluster&lt;/code>, &lt;code>GCS&lt;/code> e &lt;code>CloudEvent&lt;/code>.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;hr/>
+&lt;/div>
+&lt;div class="sect2">
+&lt;h3 id="_task">&lt;a class="anchor" href="#_task">&lt;/a>&lt;a class="link" href="#_task">Task&lt;/a>&lt;/h3>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>O padrão [init-container](&lt;a href="https://www.magalix.com/blog/kubernetes-patterns-the-init-container-pattern" class="bare">https://www.magalix.com/blog/kubernetes-patterns-the-init-container-pattern&lt;/a>) é utilizado para garantir a execução ordenada das tasks&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>É executada em um &lt;code>Pod&lt;/code> no cluster;&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Possui uma versão que transpõem o namespace &lt;code>ClusterTask&lt;/code>;&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Cada &lt;code>Step&lt;/code> dentro de uma &lt;code>Task&lt;/code> é traduzido em um container sendo executado.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Como um objeto do Kubernetes, pode consumir outros objetos, como &lt;code>ConfigMaps&lt;/code> e &lt;code>Secrets&lt;/code>.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;hr/>
+&lt;div class="listingblock">
+&lt;div class="content">
+&lt;pre class="highlightjs highlight">&lt;code class="language-yaml hljs" data-lang="yaml">apiVersion: tekton.dev/v1beta1
+kind: ClusterTask
+metadata:
+name: webhook-debug
+annotations:
+description: |
+Imprime as informações informadas pelo webhook
+spec:
+params:
+- name: pipelinerun-name
+description: Nome do pipelinerun executado
+- name: repo-name
+description: Nome do repositório
+steps:
+- name: print-webhook-informations
+image: alpine:latest
+script: |
+#!/usr/bin/env sh
+echo &amp;#34;$(inputs.params.pipelinerun-name)&amp;#34;
+echo &amp;#34;$(inputs.params.repo-name)&amp;#34;&lt;/code>&lt;/pre>
+&lt;/div>
+&lt;/div>
+&lt;hr/>
+&lt;div class="listingblock">
+&lt;div class="content">
+&lt;pre class="highlightjs highlight">&lt;code class="language-mermaid hljs" data-lang="mermaid">graph TD;
+PipelineRun --&amp;gt;|Instancia uma pipeline com determinados parâmetros| Pipeline;
+Pipeline --&amp;gt;|Instancia uma lista de tarefas| TaskRun;
+TaskRun --&amp;gt;|Instancia uma tarefa| Task;
+Task --&amp;gt;|Executa procedimentos para execução de uma tarefa| Steps;&lt;/code>&lt;/pre>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div></description></item><item><title>Instalando o virtualbox 5.1 no ubuntu</title><link>https://fabioluciano.dev/posts/20170622-instalando-o-virtualbox-no-ubuntu/</link><pubDate>Thu, 22 Jun 2017 00:00:00 +0000</pubDate><guid>https://fabioluciano.dev/posts/20170622-instalando-o-virtualbox-no-ubuntu/</guid><description>&lt;p>Um dos maiores desafios atuais dos desenvolvedores é a implementação agnóstica aos ambientes disponíveis. Mas isso, infelizmente, nem sempre é a realidade, principalmente se você utiliza o Linux em seu desktop ou notebook, e necessita fazer testes em ambientes Windows. Para resolver tais problemas diversos são disponíveis, e grande parte delas envolvem tecnologias de virtualizações de ambientes. Dois são os aplicativos principais no mercado atualmente, o VMWare e o Virtualbox, e por motivos de sinergia entre as ferramentas disponíveis(Vagrant), utilizaremos o VirtualBox.&lt;/p>
+&lt;p>Nosso primeiro passo será adicionar o repositório do VirtualBox à nossa lista de repositórios, executando o comando abaixo.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">&lt;span style="color:#8be9fd;font-style:italic">echo&lt;/span> &lt;span style="color:#f1fa8c">&amp;#34;deb http://download.virtualbox.org/virtualbox/debian &lt;/span>&lt;span style="color:#ff79c6">$(&lt;/span>lsb_release -cs&lt;span style="color:#ff79c6">)&lt;/span>&lt;span style="color:#f1fa8c"> contrib&amp;#34;&lt;/span> &amp;gt; /etc/apt/sources.list.d/virtualbox.list
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Adicionado o repositório, também precisamos adicionar sua chave, validando sua confiabilidade. Para tal, execute o comando abaixo.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">wget -q https://www.virtualbox.org/download/oracle_vbox_2016.asc -O- | sudo apt-key add -
+wget -q -O - http://download.virtualbox.org/virtualbox/debian/oracle_vbox.asc | apt-key add -
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Incluído o repositório e sua chave, é hora de avisar ao apt que existe um repositório novo a ser lido, atualizando sua lista, e instalar o pacote:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">sudo apt update --fix-missing &lt;span style="color:#ff79c6">&amp;amp;&amp;amp;&lt;/span> apt install virtualbox-5.1
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>O pacote do VirtualBox encontra-se instalado, porém é necessário instalar suas extensões para ter acesso a diversos recursos disponíveis do pacote, como habilitar dispositivos USB nas máquinas convidadas, diretórios compartilhados, melhorias nos dispositivos gráficos, entre outros.&lt;/p>
+&lt;p>Para tal, execute a linha de comando abaixo, que baixará a última versão disponível neste data, no site do VirtualBox.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">http://download.virtualbox.org/virtualbox/5.1.22/Oracle_VM_VirtualBox_Extension_Pack-5.1.22-115126.vbox-extpack
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Baixado o arquivo, execute o comando abaixo para instalá-lo!&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">sudo VBoxManage extpack install Oracle_VM_VirtualBox_Extension_Pack-5.1.22-115126.vbox-extpack --replace
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title/><link>https://fabioluciano.dev/about/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://fabioluciano.dev/about/</guid><description>&lt;h1 id="sobre">Sobre&lt;/h1></description></item><item><title>O mundo nao é dos espertos</title><link>https://fabioluciano.dev/posts/o-mundo-nao-e-dos-espertos/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://fabioluciano.dev/posts/o-mundo-nao-e-dos-espertos/</guid><description>
+&lt;div class="sect1">
+&lt;h2 id="_sequence_diagram">&lt;a class="anchor" href="#_sequence_diagram">&lt;/a>&lt;a class="link" href="#_sequence_diagram">Sequence diagram&lt;/a>&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="imageblock">
+&lt;div class="content">
+&lt;img src="plantuml-sequence-diagram-example.png" alt="plantuml sequence diagram example" width="374" height="326"/>
+&lt;/div>
+&lt;div class="title">Sequence diagram&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div></description></item></channel></rss>

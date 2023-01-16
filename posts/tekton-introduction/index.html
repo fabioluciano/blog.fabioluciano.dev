@@ -1,216 +1,465 @@
-<!DOCTYPE html>
-<html><head>
-	<meta charset="utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Pipelines com o Tekton - Introdução - Fábio Luciano</title><meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Tekton Características É um projeto Open Source mantido pela CNCF; Todas os elementos são objetos do Kubernetes; É focado em reutilização(TriggerBinding, TriggerTemplate, Pipeline, Task); Seu funcionamento se dá pela implementação de CRDs(Custom Resource Definition) customizados para cada um dos elementos descritos posteriormente. Ecossistema Tekton Triggers - Pacote com os CRDs referentes a escuta de eventos e como respondê-los; Tekton Pipelines - Pacote com os CRDs referentes a construção de tasks, recursos e elementos referentes a pipeline; Tekton Dashboard - Interface para consumir informações de execuções de pipelines; Tekton Hub - Coleção de tasks disponíveis para execução de determinadas tarefas; CLI Tool - Ferramenta de linha de comando para consumir informações e executar ações no ecossistema; Tekton Triggers EventListener - Elemento responsável por interceptar as requisições feitas ao endereço do Ingress; Trigger - Elemento responsável por configurar os gatilhos que ativarão determinadas TriggerTemplates; TriggerBinding - Permite a captura de informações de um evento, e transformação em um parâmetro consumível pela Pipeline; TriggerTemplate - Cria um template de invocação de algum elemento do pacote de pipelines." />
-	<meta property="og:image" content=""/>
-	<meta property="og:title" content="Pipelines com o Tekton - Introdução" />
-<meta property="og:description" content="Tekton Características É um projeto Open Source mantido pela CNCF; Todas os elementos são objetos do Kubernetes; É focado em reutilização(TriggerBinding, TriggerTemplate, Pipeline, Task); Seu funcionamento se dá pela implementação de CRDs(Custom Resource Definition) customizados para cada um dos elementos descritos posteriormente. Ecossistema Tekton Triggers - Pacote com os CRDs referentes a escuta de eventos e como respondê-los; Tekton Pipelines - Pacote com os CRDs referentes a construção de tasks, recursos e elementos referentes a pipeline; Tekton Dashboard - Interface para consumir informações de execuções de pipelines; Tekton Hub - Coleção de tasks disponíveis para execução de determinadas tarefas; CLI Tool - Ferramenta de linha de comando para consumir informações e executar ações no ecossistema; Tekton Triggers EventListener - Elemento responsável por interceptar as requisições feitas ao endereço do Ingress; Trigger - Elemento responsável por configurar os gatilhos que ativarão determinadas TriggerTemplates; TriggerBinding - Permite a captura de informações de um evento, e transformação em um parâmetro consumível pela Pipeline; TriggerTemplate - Cria um template de invocação de algum elemento do pacote de pipelines." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://fabioluciano.dev/posts/tekton-introduction/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2021-03-01T00:00:00+00:00" />
-<meta property="article:modified_time" content="2021-03-01T00:00:00+00:00" />
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Pipelines com o Tekton - Introdução"/>
-<meta name="twitter:description" content="Tekton Características É um projeto Open Source mantido pela CNCF; Todas os elementos são objetos do Kubernetes; É focado em reutilização(TriggerBinding, TriggerTemplate, Pipeline, Task); Seu funcionamento se dá pela implementação de CRDs(Custom Resource Definition) customizados para cada um dos elementos descritos posteriormente. Ecossistema Tekton Triggers - Pacote com os CRDs referentes a escuta de eventos e como respondê-los; Tekton Pipelines - Pacote com os CRDs referentes a construção de tasks, recursos e elementos referentes a pipeline; Tekton Dashboard - Interface para consumir informações de execuções de pipelines; Tekton Hub - Coleção de tasks disponíveis para execução de determinadas tarefas; CLI Tool - Ferramenta de linha de comando para consumir informações e executar ações no ecossistema; Tekton Triggers EventListener - Elemento responsável por interceptar as requisições feitas ao endereço do Ingress; Trigger - Elemento responsável por configurar os gatilhos que ativarão determinadas TriggerTemplates; TriggerBinding - Permite a captura de informações de um evento, e transformação em um parâmetro consumível pela Pipeline; TriggerTemplate - Cria um template de invocação de algum elemento do pacote de pipelines."/>
-<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
-	<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@1,500&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
-
-	
-	<link rel="stylesheet" type="text/css" media="screen" href="https://fabioluciano.dev/css/main.2f9b5946627215dc1ae7fa5f82bfc9cfcab000329136befeea5733f21e77d68f.css" />
-		<link rel="stylesheet" type="text/css" href="https://fabioluciano.dev/css/dark.726cd11ca6eb7c4f7d48eb420354f814e5c1b94281aaf8fd0511c1319f7f78a4.css"  />
-	
-	
-	
+<!doctype html><html lang=en-us dir=ltr>
+<head><meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="Características   É um projeto Open Source mantido pela CNCF
+  Todas os elementos são objetos do Kubernetes
+  É focado em reutilização(TriggerBinding, TriggerTemplate, Pipeline, Task)
+  Seu funcionamento se dá pela implementação de `CRD`s(Custom Resource Definition) customizados para cada um dos elementos descritos posteriormente.
+      Ecossistema   Tekton Triggers - Pacote com os CRDs referentes a escuta de eventos e como respondê-los;">
+<title>Pipelines com o Tekton - Introdução</title>
+<link rel=canonical href=https://fabioluciano.dev/posts/tekton-introduction/>
+<link rel=stylesheet href=/scss/style.min.8191399262444ab68b72a18c97392f5349be20a1615d77445be51e974c144cff.css><meta property="og:title" content="Pipelines com o Tekton - Introdução">
+<meta property="og:description" content="Características   É um projeto Open Source mantido pela CNCF
+  Todas os elementos são objetos do Kubernetes
+  É focado em reutilização(TriggerBinding, TriggerTemplate, Pipeline, Task)
+  Seu funcionamento se dá pela implementação de `CRD`s(Custom Resource Definition) customizados para cada um dos elementos descritos posteriormente.
+      Ecossistema   Tekton Triggers - Pacote com os CRDs referentes a escuta de eventos e como respondê-los;">
+<meta property="og:url" content="https://fabioluciano.dev/posts/tekton-introduction/">
+<meta property="og:site_name" content="Fábio Luciano">
+<meta property="og:type" content="article"><meta property="article:section" content="Posts"><meta property="article:tag" content="tekton"><meta property="article:published_time" content="2021-03-01T00:00:00+00:00"><meta property="article:modified_time" content="2021-03-01T00:00:00+00:00">
+<meta name=twitter:title content="Pipelines com o Tekton - Introdução">
+<meta name=twitter:description content="Características   É um projeto Open Source mantido pela CNCF
+  Todas os elementos são objetos do Kubernetes
+  É focado em reutilização(TriggerBinding, TriggerTemplate, Pipeline, Task)
+  Seu funcionamento se dá pela implementação de `CRD`s(Custom Resource Definition) customizados para cada um dos elementos descritos posteriormente.
+      Ecossistema   Tekton Triggers - Pacote com os CRDs referentes a escuta de eventos e como respondê-los;">
 </head>
-<body>
-        <div class="content"><header>
-	<div class="main">
-		<a href="https://fabioluciano.dev">Fábio Luciano</a>
-	</div>
-	<nav>
-		
-		<a href="/">Home</a>
-		
-		<a href="/posts">Posts</a>
-		
-		<a href="/about">Sobre</a>
-		
-		<a href="/tags">Tags</a>
-		
-		<a href="https://me.fabioluciano.dev/">Currículo</a>
-		
-	</nav>
-</header>
-
-<main>
-	<article>
-		<div class="title">
-			<h1 class="title">Pipelines com o Tekton - Introdução</h1>
-			<div class="meta">Posted on Mar 1, 2021</div>
-		</div>
-		
-
-		<section class="body">
-			<h1 id="tekton">Tekton</h1>
-<hr>
-<h2 id="características">Características</h2>
+<body class=article-page>
+<script>(function(){const a='StackColorScheme';localStorage.getItem(a)||localStorage.setItem(a,"auto")})()</script><script>(function(){const b='StackColorScheme',a=localStorage.getItem(b),c=window.matchMedia('(prefers-color-scheme: dark)').matches===!0;a=='dark'||a==='auto'&&c?document.documentElement.dataset.scheme='dark':document.documentElement.dataset.scheme='light'})()</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky">
+<button class="hamburger hamburger--spin" type=button id=toggle-menu aria-label="Toggle Menu">
+<span class=hamburger-box>
+<span class=hamburger-inner></span>
+</span>
+</button>
+<header>
+<div class=site-meta>
+<h1 class=site-name><a href=/>Fábio Luciano</a></h1>
+<h2 class=site-description></h2>
+</div>
+</header><ol class=social-menu>
+<li>
+<a href=https://github.com/fabioluciano target=_blank title=GitHub rel=me><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6.0 00-1.3-3.2 4.2 4.2.0 00-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3.0 00-6.2.0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2.0 00-.1 3.2A4.6 4.6.0 004 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>
+</a>
+</li>
+<li>
+<a href=https://twitter.com/fabioluciano target=_blank title=Twitter rel=me><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M22 4.01c-1 .49-1.98.689-3 .99-1.121-1.265-2.783-1.335-4.38-.737S11.977 6.323 12 8v1c-3.245.083-6.135-1.395-8-4 0 0-4.182 7.433 4 11-1.872 1.247-3.739 2.088-6 2 3.308 1.803 6.913 2.423 10.034 1.517 3.58-1.04 6.522-3.723 7.651-7.742a13.84 13.84.0 00.497-3.753C20.18 7.773 21.692 5.25 22 4.009z"/></svg>
+</a>
+</li>
+</ol><ol class=menu id=main-menu>
+<div class=menu-bottom-section>
+<li id=dark-mode-toggle><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="8" cy="12" r="2"/><rect x="2" y="6" width="20" height="12" rx="6"/></svg><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="16" cy="12" r="2"/><rect x="2" y="6" width="20" height="12" rx="6"/></svg>
+<span>Dark Mode</span>
+</li>
+</div>
+</ol>
+</aside>
+<aside class="sidebar right-sidebar sticky">
+<section class="widget archives">
+<div class=widget-icon><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><line x1="5" y1="9" x2="19" y2="9"/><line x1="5" y1="15" x2="19" y2="15"/><line x1="11" y1="4" x2="7" y2="20"/><line x1="17" y1="4" x2="13" y2="20"/></svg>
+</div>
+<h2 class="widget-title section-title">Table of contents</h2>
+<div class=widget--toc>
+<nav id=TableOfContents>
 <ul>
-<li>É um projeto Open Source mantido pela CNCF;</li>
-<li>Todas os elementos são objetos do Kubernetes;</li>
-<li>É focado em reutilização(<code>TriggerBinding</code>, <code>TriggerTemplate</code>, <code>Pipeline</code>, <code>Task</code>);</li>
-<li>Seu funcionamento se dá pela implementação de <code>CRD</code>s(Custom Resource Definition) customizados para cada um dos elementos descritos posteriormente.</li>
+<li><a href=#_características>Características</a></li>
+<li><a href=#_ecossistema>Ecossistema</a></li>
+<li><a href=#_tekton_triggers>Tekton Triggers</a>
+<ul>
+<li><a href=#_eventlistener>EventListener</a></li>
+<li><a href=#_trigger>Trigger</a></li>
+<li><a href=#_triggerbinding>TriggerBinding</a></li>
+<li><a href=#_triggertemplate>TriggerTemplate</a></li>
 </ul>
-<hr>
-<h2 id="ecossistema">Ecossistema</h2>
+</li>
+<li><a href=#_tekton_pipelines>Tekton Pipelines</a>
 <ul>
-<li><a href="https://tekton.dev/docs/triggers/">Tekton Triggers</a> - Pacote com os <code>CRDs</code> referentes a escuta de eventos e como respondê-los;</li>
-<li><a href="https://tekton.dev/docs/pipelines/">Tekton Pipelines</a> - Pacote com os <code>CRDs</code> referentes a construção de tasks, recursos e elementos referentes a pipeline;</li>
-<li><a href="https://tekton.dev/docs/dashboard/">Tekton Dashboard</a> - Interface para consumir informações de execuções de pipelines;</li>
-<li><a href="https://hub-preview.tekton.dev/">Tekton Hub</a> - Coleção de tasks disponíveis para execução de determinadas tarefas;</li>
-<li><a href="https://tekton.dev/docs/cli/">CLI Tool</a> - Ferramenta de linha de comando para consumir informações e executar ações no ecossistema;</li>
-</ul>
-<hr>
-<h2 id="tekton-triggers">Tekton Triggers</h2>
-<ul>
-<li><a href="https://tekton.dev/docs/triggers/eventlisteners/">EventListener</a> - Elemento responsável por interceptar as requisições feitas ao endereço do <code>Ingress</code>;</li>
-<li><a href="https://tekton.dev/docs/triggers/triggers/">Trigger</a> - Elemento responsável por configurar os gatilhos que ativarão determinadas <code>TriggerTemplate</code>s;</li>
-<li><a href="https://tekton.dev/docs/triggers/triggerbindings/">TriggerBinding</a> - Permite a captura de informações de um evento, e transformação em um parâmetro consumível pela <code>Pipeline</code>;</li>
-<li><a href="https://tekton.dev/docs/triggers/triggertemplates/">TriggerTemplate</a> - Cria um template de invocação de algum elemento do pacote de pipelines. (Eg. <code>PipelineRun</code>, <code>TaskRun</code>).</li>
-</ul>
-<hr>
-<h3 id="eventlistener">EventListener</h3>
-<ul>
-<li>Cria uma <code>Service</code> que pode ser anexado a um <code>Ingress</code> para receber requisições externas (eg. Endereço utilizado no <code>webhook</code> do repositório);</li>
-<li>É a entidade que aglomerá os <code>Trigger</code>s que tratarão as requisições ao <code>EventListener</code>.</li>
-</ul>
-<hr>
-<h3 id="trigger">Trigger</h3>
-<ul>
-<li>O chaveamento entre qual pipeline deve ser executada é feito utilizando <code>interceptor</code>s;</li>
-<li>Por padrão possui interceptors para <code>Github</code>, <code>Gitlab</code>, <code>Github</code> e <code>CEL</code>.</li>
-<li>O interceptor <code>CEL</code> é o mais versátil, definindo filtros e overlays às informações.
-<ul>
-<li><strong>Filtros</strong>: Informa quais campos da requisição vai disparar o gatilho. (eg. <code>&quot;header.match('X-GitHub-Event', 'pull_request')&quot;</code>);</li>
-<li><strong>Overlays</strong>: Executa transformações em campos da requisição, para consumo na pipeline. (eg. <code>&quot;body.pull_request.head.sha.truncate(7)&quot;</code>).</li>
+<li><a href=#_pipeline>Pipeline</a></li>
+<li><a href=#_pipelineresource>PipelineResource</a></li>
+<li><a href=#_task>Task</a></li>
 </ul>
 </li>
 </ul>
-<hr>
-<h3 id="triggerbinding">TriggerBinding</h3>
-<ul>
-<li>Traduz campos da requisição para parâmetros que serão consumidos na pipeline.</li>
-<li>Os campos do envolope <code>HTTP</code> disponíveis são os <code>Headers</code> e <code>Body</code>.</li>
-</ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span>- <span style="color:#ff79c6">name</span>: triggered-event
-</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">value</span>: $(header.X-Github-Event)
-</span></span><span style="display:flex;"><span>- <span style="color:#ff79c6">name</span>: event-action
-</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">value</span>: $(body.action)
-</span></span></code></pre></div><hr>
-<h3 id="triggertemplate">TriggerTemplate</h3>
-<ul>
-<li>Neste objeto são configurados os templates padrão para cada evento disparado em um dos <code>Triggers</code>;</li>
-<li>Recebe os parâmetros de uma <code>TriggerBinding</code> e os atribui a um <code>PipelineRun</code> ou <code>TaskRun</code>;</li>
-</ul>
-<hr>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>graph TD;
-</span></span><span style="display:flex;"><span>    GithubWebhookEvent(Github Event)--&gt;|Envia um json para o webhook|IngressEventListener(Ingress);
-</span></span><span style="display:flex;"><span>    IngressEventListener--&gt;
-</span></span><span style="display:flex;"><span>|Chama a Service exposta|EventListener(EventListener);
-</span></span><span style="display:flex;"><span>    EventListener --&gt;|Carrega todos os triggers configurados| Trigger;
-</span></span><span style="display:flex;"><span>    Trigger --&gt;|Passa o conteúdo do evento| TriggerBinding;
-</span></span><span style="display:flex;"><span>    TriggerBinding --&gt;|Cria variáveis que serão consumidas | TriggerTemplate;
-</span></span><span style="display:flex;"><span>    TriggerTemplate --&gt;|Invoca uma execução de pipeline| PipelineRun;
-</span></span></code></pre></div><hr>
-<h2 id="tekton-pipelines">Tekton Pipelines</h2>
-<ul>
-<li><a href="https://tekton.dev/docs/pipelines/pipelines/">Pipeline</a> - Objeto que agrupa <code>Task</code>s comuns à pipeline;</li>
-<li><a href="https://tekton.dev/docs/pipelines/pipelineruns/">PipelineRun</a> - Instancia e executa uma <code>Pipeline</code>;</li>
-<li><a href="https://tekton.dev/docs/pipelines/resources/">PipelineResource</a> - Objetos que serão utilizados como entradas/saídas de uma <code>Task</code>;</li>
-<li><a href="https://tekton.dev/docs/pipelines/tasks/">Task</a> - É uma coleção de <code>Steps</code> a serem executados para conclusão de uma determinada tarefa;</li>
-<li><a href="https://tekton.dev/docs/pipelines/taskruns/">TaskRun</a> - Instancia e executa uma determinada <code>Task</code>;</li>
-</ul>
-<hr>
-<h3 id="pipeline">Pipeline</h3>
-<ul>
-<li>Agrupa <code>Tasks</code> para um fim específico;</li>
-<li>Os parâmetros são inputados por um objeto <code>PipelineRun</code>;</li>
-<li>Pode possuir recursos que são esperados.(Eg. repositório, pullrequest, imagem docker)</li>
-<li>Vários repositórios podem consumir a mesma pipeline, com parâmetros diferentes.</li>
-<li>Os volumes, utilizados para transição de informações entre <code>Tasks</code> são denominados workspaces.</li>
-<li>Workspaces podem ser utilizados para reutilizar bibliotecas e acelerar o processo de build (node_modules(nodejs/frontend), .terraform(:P), .m2(JAVA), vendor(PHP))</li>
-</ul>
-<hr>
-<h3 id="pipelineresource">PipelineResource</h3>
-<ul>
-<li>Ajudam a abstrair os recursos consumidos por uma <code>Pipeline</code>/<code>Task</code>;</li>
-<li>Podem ser de entrada(input), ou de saída(output);</li>
-<li>Podem ser dos tipos: <code>Git</code>, <code>PullRequest</code>, <code>Image</code>, <code>Cluster</code>, <code>GCS</code> e <code>CloudEvent</code>.</li>
-</ul>
-<hr>
-<h3 id="task">Task</h3>
-<ul>
-<li>O padrão <a href="https://www.magalix.com/blog/kubernetes-patterns-the-init-container-pattern">init-container</a> é utilizado para garantir a execução ordenada das tasks</li>
-<li>É executada em um <code>Pod</code> no cluster;</li>
-<li>Possui uma versão que transpõem o namespace <code>ClusterTask</code>;</li>
-<li>Cada <code>Step</code> dentro de uma <code>Task</code> é traduzido em um container sendo executado.</li>
-<li>Como um objeto do Kubernetes, pode consumir outros objetos, como <code>ConfigMaps</code> e <code>Secrets</code>.</li>
-</ul>
-<hr>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#ff79c6">apiVersion</span>: tekton.dev/v1beta1
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">kind</span>: ClusterTask
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">metadata</span>:
-</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">name</span>: webhook-debug
-</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">annotations</span>:
-</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">description</span>: |<span style="color:#f1fa8c">
-</span></span></span><span style="display:flex;"><span><span style="color:#f1fa8c">      </span>      Imprime as informações informadas pelo webhook
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">spec</span>:
-</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">params</span>:
-</span></span><span style="display:flex;"><span>    - <span style="color:#ff79c6">name</span>: pipelinerun-name
-</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">description</span>: Nome do pipelinerun executado
-</span></span><span style="display:flex;"><span>    - <span style="color:#ff79c6">name</span>: repo-name
-</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">description</span>: Nome do repositório
-</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">steps</span>:
-</span></span><span style="display:flex;"><span>    - <span style="color:#ff79c6">name</span>: print-webhook-informations
-</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">image</span>: alpine:latest
-</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">script</span>: |<span style="color:#f1fa8c">
-</span></span></span><span style="display:flex;"><span><span style="color:#f1fa8c">        #!/usr/bin/env sh
-</span></span></span><span style="display:flex;"><span><span style="color:#f1fa8c">        echo &#34;$(inputs.params.pipelinerun-name)&#34;
-</span></span></span><span style="display:flex;"><span><span style="color:#f1fa8c">        echo &#34;$(inputs.params.repo-name)&#34;</span>        
-</span></span></code></pre></div><hr>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>graph TD;
-</span></span><span style="display:flex;"><span>    PipelineRun --&gt;|Instancia uma pipeline com determinados parâmetros| Pipeline;
-</span></span><span style="display:flex;"><span>    Pipeline --&gt;|Instancia uma lista de tarefas| TaskRun;
-</span></span><span style="display:flex;"><span>    TaskRun --&gt;|Instancia uma tarefa| Task;
-</span></span><span style="display:flex;"><span>    Task --&gt;|Executa procedimentos para execução de uma tarefa| Steps;
-</span></span></code></pre></div>
-		</section>
-
-		<div class="post-tags">
-			
-			
-			<nav class="nav tags">
-				<ul class="tags">
-					
-					<li><a href="/tags/tekton">tekton</a></li>
-					
-				</ul>
-			</nav>
-			
-			
-		</div>
-	</article>
-</main>
-<footer>
-<hr><a class="soc" href="https://github.com/fabioluciano/" title="GitHub"><i data-feather="github"></i></a>|<a class="soc" href="https://twitter.com/fabioluciano/" title="Twitter"><i data-feather="twitter"></i></a>|<a class="soc" href="https://me.fabioluciano.dev/" title="Currículo"><i data-feather="user"></i></a>|⚡️
-	2023  Fábio Luciano |  <a href="https://github.com/athul/archie">Archie Theme</a> | Built with <a href="https://gohugo.io">Hugo</a>
+</nav>
+</div>
+</section>
+</aside>
+<main class="main full-width">
+<article class=main-article>
+<header class=article-header>
+<div class=article-details>
+<header class=article-category>
+<a href=/categories/tekton/>
+tekton
+</a>
+</header>
+<div class=article-title-wrapper>
+<h2 class=article-title>
+<a href=/posts/tekton-introduction/>Pipelines com o Tekton - Introdução</a>
+</h2>
+</div>
+<footer class=article-time>
+<div><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><path d="M11.795 21H5a2 2 0 01-2-2V7a2 2 0 012-2h12a2 2 0 012 2v4"/><circle cx="18" cy="18" r="4"/><path d="M15 3v4"/><path d="M7 3v4"/><path d="M3 11h16"/><path d="M18 16.496V18l1 1"/></svg>
+<time class=article-time--published>Mar 01, 2021</time>
+</div>
+<div><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 15"/></svg>
+<time class=article-time--reading>
+3 minute read
+</time>
+</div>
 </footer>
-
-
-<script>
-      feather.replace()
-</script></div>
-    </body>
+</div>
+</header>
+<section class=article-content>
+<div class=sect1>
+<h2 id=_características><a class=anchor href=#_características></a><a class=link href=#_características>Características</a></h2>
+<div class=sectionbody>
+<div class=ulist>
+<ul>
+<li>
+<p>É um projeto Open Source mantido pela CNCF</p>
+</li>
+<li>
+<p>Todas os elementos são objetos do Kubernetes</p>
+</li>
+<li>
+<p>É focado em reutilização(<code>TriggerBinding</code>, <code>TriggerTemplate</code>, <code>Pipeline</code>, <code>Task</code>)</p>
+</li>
+<li>
+<p>Seu funcionamento se dá pela implementação de `CRD`s(Custom Resource Definition) customizados para cada um dos elementos descritos posteriormente.</p>
+</li>
+</ul>
+</div>
+<hr>
+</div>
+</div>
+<div class=sect1>
+<h2 id=_ecossistema><a class=anchor href=#_ecossistema></a><a class=link href=#_ecossistema>Ecossistema</a></h2>
+<div class=sectionbody>
+<div class=ulist>
+<ul>
+<li>
+<p><a href=https://tekton.dev/docs/triggers/>Tekton Triggers</a> - Pacote com os <code>CRDs</code> referentes a escuta de eventos e como respondê-los;</p>
+</li>
+<li>
+<p>[Tekton Pipelines](<a href=https://tekton.dev/docs/pipelines/ class=bare>https://tekton.dev/docs/pipelines/</a>) - Pacote com os <code>CRDs</code> referentes a construção de tasks, recursos e elementos referentes a pipeline;</p>
+</li>
+<li>
+<p>[Tekton Dashboard](<a href=https://tekton.dev/docs/dashboard/ class=bare>https://tekton.dev/docs/dashboard/</a>) - Interface para consumir informações de execuções de pipelines;</p>
+</li>
+<li>
+<p>[Tekton Hub](<a href=https://hub-preview.tekton.dev/ class=bare>https://hub-preview.tekton.dev/</a>) - Coleção de tasks disponíveis para execução de determinadas tarefas;</p>
+</li>
+<li>
+<p>[CLI Tool](<a href=https://tekton.dev/docs/cli/ class=bare>https://tekton.dev/docs/cli/</a>) - Ferramenta de linha de comando para consumir informações e executar ações no ecossistema;</p>
+</li>
+</ul>
+</div>
+<hr>
+</div>
+</div>
+<div class=sect1>
+<h2 id=_tekton_triggers><a class=anchor href=#_tekton_triggers></a><a class=link href=#_tekton_triggers>Tekton Triggers</a></h2>
+<div class=sectionbody>
+<div class=ulist>
+<ul>
+<li>
+<p>[EventListener](<a href=https://tekton.dev/docs/triggers/eventlisteners/ class=bare>https://tekton.dev/docs/triggers/eventlisteners/</a>) - Elemento responsável por interceptar as requisições feitas ao endereço do <code>Ingress</code>;</p>
+</li>
+<li>
+<p>[Trigger](<a href=https://tekton.dev/docs/triggers/triggers/ class=bare>https://tekton.dev/docs/triggers/triggers/</a>) - Elemento responsável por configurar os gatilhos que ativarão determinadas `TriggerTemplate`s;</p>
+</li>
+<li>
+<p>[TriggerBinding](<a href=https://tekton.dev/docs/triggers/triggerbindings/ class=bare>https://tekton.dev/docs/triggers/triggerbindings/</a>) - Permite a captura de informações de um evento, e transformação em um parâmetro consumível pela <code>Pipeline</code>;</p>
+</li>
+<li>
+<p>[TriggerTemplate](<a href=https://tekton.dev/docs/triggers/triggertemplates/ class=bare>https://tekton.dev/docs/triggers/triggertemplates/</a>) - Cria um template de invocação de algum elemento do pacote de pipelines. (Eg. <code>PipelineRun</code>, <code>TaskRun</code>).</p>
+</li>
+</ul>
+</div>
+<hr>
+<div class=sect2>
+<h3 id=_eventlistener><a class=anchor href=#_eventlistener></a><a class=link href=#_eventlistener>EventListener</a></h3>
+<div class=ulist>
+<ul>
+<li>
+<p>Cria uma <code>Service</code> que pode ser anexado a um <code>Ingress</code> para receber requisições externas (eg. Endereço utilizado no <code>webhook</code> do repositório);</p>
+</li>
+<li>
+<p>É a entidade que aglomerá os <code>Trigger`s que tratarão as requisições ao `EventListener</code>.</p>
+</li>
+</ul>
+</div>
+<hr>
+</div>
+<div class=sect2>
+<h3 id=_trigger><a class=anchor href=#_trigger></a><a class=link href=#_trigger>Trigger</a></h3>
+<div class=ulist>
+<ul>
+<li>
+<p>O chaveamento entre qual pipeline deve ser executada é feito utilizando `interceptor`s;</p>
+</li>
+<li>
+<p>Por padrão possui interceptors para <code>Github</code>, <code>Gitlab</code>, <code>Github</code> e <code>CEL</code>.</p>
+</li>
+<li>
+<p>O interceptor <code>CEL</code> é o mais versátil, definindo filtros e overlays às informações.</p>
+<div class=ulist>
+<ul>
+<li>
+<p><strong>Filtros</strong>: Informa quais campos da requisição vai disparar o gatilho. (eg. <code>"header.match('X-GitHub-Event', 'pull_request')"</code>);</p>
+</li>
+<li>
+<p><strong>Overlays</strong>: Executa transformações em campos da requisição, para consumo na pipeline. (eg. <code>"body.pull_request.head.sha.truncate(7)"</code>).</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<hr>
+</div>
+<div class=sect2>
+<h3 id=_triggerbinding><a class=anchor href=#_triggerbinding></a><a class=link href=#_triggerbinding>TriggerBinding</a></h3>
+<div class=ulist>
+<ul>
+<li>
+<p>Traduz campos da requisição para parâmetros que serão consumidos na pipeline.</p>
+</li>
+<li>
+<p>Os campos do envolope <code>HTTP</code> disponíveis são os <code>Headers</code> e <code>Body</code>.</p>
+</li>
+</ul>
+</div>
+<div class=listingblock>
+<div class=content>
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang=yaml>* name: triggered-event
+  value: $(header.X-Github-Event)
+* name: event-action
+  value: $(body.action)</code></pre>
+</div>
+</div>
+<hr>
+</div>
+<div class=sect2>
+<h3 id=_triggertemplate><a class=anchor href=#_triggertemplate></a><a class=link href=#_triggertemplate>TriggerTemplate</a></h3>
+<div class=ulist>
+<ul>
+<li>
+<p>Neste objeto são configurados os templates padrão para cada evento disparado em um dos <code>Triggers</code>;</p>
+</li>
+<li>
+<p>Recebe os parâmetros de uma <code>TriggerBinding</code> e os atribui a um <code>PipelineRun</code> ou <code>TaskRun</code>;</p>
+</li>
+</ul>
+</div>
+<div class=imageblock>
+<div class=content>
+<img src=plantuml-tekton-workflow.png alt="plantuml tekton workflow" width=269 height=189>
+</div>
+<div class=title>Tekton workflow diagram</div>
+</div>
+</div>
+</div>
+</div>
+<div class=sect1>
+<h2 id=_tekton_pipelines><a class=anchor href=#_tekton_pipelines></a><a class=link href=#_tekton_pipelines>Tekton Pipelines</a></h2>
+<div class=sectionbody>
+<div class=ulist>
+<ul>
+<li>
+<p>[Pipeline](<a href=https://tekton.dev/docs/pipelines/pipelines/ class=bare>https://tekton.dev/docs/pipelines/pipelines/</a>) - Objeto que agrupa `Task`s comuns à pipeline;</p>
+</li>
+<li>
+<p>[PipelineRun](<a href=https://tekton.dev/docs/pipelines/pipelineruns/ class=bare>https://tekton.dev/docs/pipelines/pipelineruns/</a>) - Instancia e executa uma <code>Pipeline</code>;</p>
+</li>
+<li>
+<p>[PipelineResource](<a href=https://tekton.dev/docs/pipelines/resources/ class=bare>https://tekton.dev/docs/pipelines/resources/</a>) - Objetos que serão utilizados como entradas/saídas de uma <code>Task</code>;</p>
+</li>
+<li>
+<p>[Task](<a href=https://tekton.dev/docs/pipelines/tasks/ class=bare>https://tekton.dev/docs/pipelines/tasks/</a>) - É uma coleção de <code>Steps</code> a serem executados para conclusão de uma determinada tarefa;</p>
+</li>
+<li>
+<p>[TaskRun](<a href=https://tekton.dev/docs/pipelines/taskruns/ class=bare>https://tekton.dev/docs/pipelines/taskruns/</a>) - Instancia e executa uma determinada <code>Task</code>;</p>
+</li>
+</ul>
+</div>
+<hr>
+<div class=sect2>
+<h3 id=_pipeline><a class=anchor href=#_pipeline></a><a class=link href=#_pipeline>Pipeline</a></h3>
+<div class=ulist>
+<ul>
+<li>
+<p>Agrupa <code>Tasks</code> para um fim específico;</p>
+</li>
+<li>
+<p>Os parâmetros são inputados por um objeto <code>PipelineRun</code>;</p>
+</li>
+<li>
+<p>Pode possuir recursos que são esperados.(Eg. repositório, pullrequest, imagem docker)</p>
+</li>
+<li>
+<p>Vários repositórios podem consumir a mesma pipeline, com parâmetros diferentes.</p>
+</li>
+<li>
+<p>Os volumes, utilizados para transição de informações entre <code>Tasks</code> são denominados workspaces.</p>
+</li>
+<li>
+<p>Workspaces podem ser utilizados para reutilizar bibliotecas e acelerar o processo de build (node_modules(nodejs/frontend), .terraform(:P), .m2(JAVA), vendor(PHP))</p>
+</li>
+</ul>
+</div>
+<hr>
+</div>
+<div class=sect2>
+<h3 id=_pipelineresource><a class=anchor href=#_pipelineresource></a><a class=link href=#_pipelineresource>PipelineResource</a></h3>
+<div class=ulist>
+<ul>
+<li>
+<p>Ajudam a abstrair os recursos consumidos por uma <code>Pipeline</code>/<code>Task</code>;</p>
+</li>
+<li>
+<p>Podem ser de entrada(input), ou de saída(output);</p>
+</li>
+<li>
+<p>Podem ser dos tipos: <code>Git</code>, <code>PullRequest</code>, <code>Image</code>, <code>Cluster</code>, <code>GCS</code> e <code>CloudEvent</code>.</p>
+</li>
+</ul>
+</div>
+<hr>
+</div>
+<div class=sect2>
+<h3 id=_task><a class=anchor href=#_task></a><a class=link href=#_task>Task</a></h3>
+<div class=ulist>
+<ul>
+<li>
+<p>O padrão [init-container](<a href=https://www.magalix.com/blog/kubernetes-patterns-the-init-container-pattern class=bare>https://www.magalix.com/blog/kubernetes-patterns-the-init-container-pattern</a>) é utilizado para garantir a execução ordenada das tasks</p>
+</li>
+<li>
+<p>É executada em um <code>Pod</code> no cluster;</p>
+</li>
+<li>
+<p>Possui uma versão que transpõem o namespace <code>ClusterTask</code>;</p>
+</li>
+<li>
+<p>Cada <code>Step</code> dentro de uma <code>Task</code> é traduzido em um container sendo executado.</p>
+</li>
+<li>
+<p>Como um objeto do Kubernetes, pode consumir outros objetos, como <code>ConfigMaps</code> e <code>Secrets</code>.</p>
+</li>
+</ul>
+</div>
+<hr>
+<div class=listingblock>
+<div class=content>
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang=yaml>apiVersion: tekton.dev/v1beta1
+kind: ClusterTask
+metadata:
+  name: webhook-debug
+  annotations:
+    description: |
+      Imprime as informações informadas pelo webhook
+spec:
+  params:
+    - name: pipelinerun-name
+      description: Nome do pipelinerun executado
+    - name: repo-name
+      description: Nome do repositório
+  steps:
+    - name: print-webhook-informations
+      image: alpine:latest
+      script: |
+        #!/usr/bin/env sh
+        echo &#34;$(inputs.params.pipelinerun-name)&#34;
+        echo &#34;$(inputs.params.repo-name)&#34;</code></pre>
+</div>
+</div>
+<hr>
+<div class=listingblock>
+<div class=content>
+<pre class="highlightjs highlight"><code class="language-mermaid hljs" data-lang=mermaid>graph TD;
+    PipelineRun --&gt;|Instancia uma pipeline com determinados parâmetros| Pipeline;
+    Pipeline --&gt;|Instancia uma lista de tarefas| TaskRun;
+    TaskRun --&gt;|Instancia uma tarefa| Task;
+    Task --&gt;|Executa procedimentos para execução de uma tarefa| Steps;</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<footer class=article-footer>
+<section class=article-tags>
+<a href=/tags/tekton/>tekton</a>
+</section>
+</footer>
+</article>
+<aside class=related-content--wrapper>
+<h2 class=section-title>Related content</h2>
+<div class=related-content>
+<div class="flex article-list--tile">
+<article>
+<a href=/posts/tekton-instalation/>
+<div class=article-details>
+<h2 class=article-title>Pipelines com o Tekton - Instalação</h2>
+</div>
+</a>
+</article>
+</div>
+</div>
+</aside>
+<div class=disqus-container>
+</div>
+<style>.disqus-container{background-color:var(--card-background);border-radius:var(--card-border-radius);box-shadow:var(--shadow-l1);padding:var(--card-padding)}</style>
+<script>window.addEventListener('onColorSchemeChange',a=>{typeof DISQUS=='object'&&DISQUS.reset({reload:!0})})</script>
+<footer class=site-footer>
+<section class=copyright>
+&copy;
+2023 Fábio Luciano
+</section>
+<section class=powerby>
+Built with <a href=https://gohugo.io/ target=_blank rel=noopener>Hugo</a> <br>
+Theme <b><a href=https://github.com/CaiJimmy/hugo-theme-stack target=_blank rel=noopener data-version=3.16.0>Stack</a></b> designed by <a href=https://jimmycai.com target=_blank rel=noopener>Jimmy</a>
+</section>
+</footer>
+<div class=pswp tabindex=-1 role=dialog aria-hidden=true>
+<div class=pswp__bg></div>
+<div class=pswp__scroll-wrap>
+<div class=pswp__container>
+<div class=pswp__item></div>
+<div class=pswp__item></div>
+<div class=pswp__item></div>
+</div>
+<div class="pswp__ui pswp__ui--hidden">
+<div class=pswp__top-bar>
+<div class=pswp__counter></div>
+<button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+<button class="pswp__button pswp__button--share" title=Share></button>
+<button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+<div class=pswp__preloader>
+<div class=pswp__preloader__icn>
+<div class=pswp__preloader__cut>
+<div class=pswp__preloader__donut></div>
+</div>
+</div>
+</div>
+</div>
+<div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+<div class=pswp__share-tooltip></div>
+</div>
+<button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+</button>
+<button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+</button>
+<div class=pswp__caption>
+<div class=pswp__caption__center></div>
+</div>
+</div>
+</div>
+</div><script src=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo=" crossorigin=anonymous defer></script><script src=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU=" crossorigin=anonymous defer></script><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css crossorigin=anonymous><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css crossorigin=anonymous>
+</main>
+</div>
+<script src=https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z+KMkF24hUW8WePSA9HM=" crossorigin=anonymous></script><script type=text/javascript src=/ts/main.js defer></script>
+<script>(function(){const a=document.createElement('link');a.href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap",a.type="text/css",a.rel="stylesheet",document.head.appendChild(a)})()</script>
+</body>
 </html>

@@ -1,21 +1,14 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>ops on Fábio Luciano</title>
-    <link>https://fabioluciano.dev/categories/ops/</link>
-    <description>Recent content in ops on Fábio Luciano</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <copyright>Fábio Luciano</copyright>
-    <lastBuildDate>Thu, 22 Jun 2017 00:00:00 +0000</lastBuildDate><atom:link href="https://fabioluciano.dev/categories/ops/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Instalando o virtualbox 5.1 no ubuntu</title>
-      <link>https://fabioluciano.dev/posts/20170622-instalando-o-virtualbox-no-ubuntu/</link>
-      <pubDate>Thu, 22 Jun 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://fabioluciano.dev/posts/20170622-instalando-o-virtualbox-no-ubuntu/</guid>
-      <description>Um dos maiores desafios atuais dos desenvolvedores é a implementação agnóstica aos ambientes disponíveis. Mas isso, infelizmente, nem sempre é a realidade, principalmente se você utiliza o Linux em seu desktop ou notebook, e necessita fazer testes em ambientes Windows. Para resolver tais problemas diversos são disponíveis, e grande parte delas envolvem tecnologias de virtualizações de ambientes. Dois são os aplicativos principais no mercado atualmente, o VMWare e o Virtualbox, e por motivos de sinergia entre as ferramentas disponíveis(Vagrant), utilizaremos o VirtualBox.</description>
-    </item>
-    
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ops on Fábio Luciano</title><link>https://fabioluciano.dev/categories/ops/</link><description>Recent content in ops on Fábio Luciano</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright>Fábio Luciano</copyright><lastBuildDate>Thu, 22 Jun 2017 00:00:00 +0000</lastBuildDate><atom:link href="https://fabioluciano.dev/categories/ops/index.xml" rel="self" type="application/rss+xml"/><item><title>Instalando o virtualbox 5.1 no ubuntu</title><link>https://fabioluciano.dev/posts/20170622-instalando-o-virtualbox-no-ubuntu/</link><pubDate>Thu, 22 Jun 2017 00:00:00 +0000</pubDate><guid>https://fabioluciano.dev/posts/20170622-instalando-o-virtualbox-no-ubuntu/</guid><description>&lt;p>Um dos maiores desafios atuais dos desenvolvedores é a implementação agnóstica aos ambientes disponíveis. Mas isso, infelizmente, nem sempre é a realidade, principalmente se você utiliza o Linux em seu desktop ou notebook, e necessita fazer testes em ambientes Windows. Para resolver tais problemas diversos são disponíveis, e grande parte delas envolvem tecnologias de virtualizações de ambientes. Dois são os aplicativos principais no mercado atualmente, o VMWare e o Virtualbox, e por motivos de sinergia entre as ferramentas disponíveis(Vagrant), utilizaremos o VirtualBox.&lt;/p>
+&lt;p>Nosso primeiro passo será adicionar o repositório do VirtualBox à nossa lista de repositórios, executando o comando abaixo.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">&lt;span style="color:#8be9fd;font-style:italic">echo&lt;/span> &lt;span style="color:#f1fa8c">&amp;#34;deb http://download.virtualbox.org/virtualbox/debian &lt;/span>&lt;span style="color:#ff79c6">$(&lt;/span>lsb_release -cs&lt;span style="color:#ff79c6">)&lt;/span>&lt;span style="color:#f1fa8c"> contrib&amp;#34;&lt;/span> &amp;gt; /etc/apt/sources.list.d/virtualbox.list
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Adicionado o repositório, também precisamos adicionar sua chave, validando sua confiabilidade. Para tal, execute o comando abaixo.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">wget -q https://www.virtualbox.org/download/oracle_vbox_2016.asc -O- | sudo apt-key add -
+wget -q -O - http://download.virtualbox.org/virtualbox/debian/oracle_vbox.asc | apt-key add -
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Incluído o repositório e sua chave, é hora de avisar ao apt que existe um repositório novo a ser lido, atualizando sua lista, e instalar o pacote:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">sudo apt update --fix-missing &lt;span style="color:#ff79c6">&amp;amp;&amp;amp;&lt;/span> apt install virtualbox-5.1
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>O pacote do VirtualBox encontra-se instalado, porém é necessário instalar suas extensões para ter acesso a diversos recursos disponíveis do pacote, como habilitar dispositivos USB nas máquinas convidadas, diretórios compartilhados, melhorias nos dispositivos gráficos, entre outros.&lt;/p>
+&lt;p>Para tal, execute a linha de comando abaixo, que baixará a última versão disponível neste data, no site do VirtualBox.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">http://download.virtualbox.org/virtualbox/5.1.22/Oracle_VM_VirtualBox_Extension_Pack-5.1.22-115126.vbox-extpack
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Baixado o arquivo, execute o comando abaixo para instalá-lo!&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">sudo VBoxManage extpack install Oracle_VM_VirtualBox_Extension_Pack-5.1.22-115126.vbox-extpack --replace
+&lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>
