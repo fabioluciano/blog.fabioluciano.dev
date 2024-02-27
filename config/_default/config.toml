@@ -1,0 +1,33 @@
+languageCode = "pt-br"
+title = "Fábio Luciano"
+copyright = "Fábio Luciano"
+pygmentsstyle = "dracula"
+pygmentscodefences = true
+pygmentscodefencesguesssyntax = true
+baseURL = "https://blog.fabioluciano.dev/"
+defaultContentLanguage = "pt-br"
+googleAnalytics = "G-MEASUREMENT_ID"
+
+enableRobotsTXT = true
+paginate = 10
+summaryLength = 30
+
+[outputs]
+home = ["HTML", "RSS", "JSON"]
+
+[permalinks]
+post = "/p/:slug/"
+page = "/:slug/"
+
+[related]
+includeNewer = true
+threshold = 60
+toLower = false
+
+[[related.indices]]
+name = "tags"
+weight = 100
+
+[[related.indices]]
+name = "categories"
+weight = 200

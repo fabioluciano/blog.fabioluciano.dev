@@ -5,3 +5,4 @@ public
 .hugo_build.lock
 content/posts/**/plantuml-**
 resources
+.vscode

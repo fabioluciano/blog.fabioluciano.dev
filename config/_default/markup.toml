@@ -1,0 +1,30 @@
+[goldmark]
+[goldmark.renderer]
+unsafe = true
+
+[highlight]
+noClasses = false
+
+[tableOfContents]
+startLevel = 2
+endLevel = 4
+
+[asciidocext]
+extensions = ["asciidoctor-diagram"]
+workingFolderCurrent = true
+trace = true
+failureLevel = "fatal"
+
+[asciidocext.attributes]
+"toc" = ""
+"docinfo" = "shared"
+"nofooter" = ""
+"skip-front-matter" = ""
+"icons" = "font"
+"sectlinks" = ""
+"sectanchors" = ""
+"figure-caption!" = ""
+"source-highlighter" = "highlightjs"
+"experimental" = "true"
+"plantuml-format" = "png"
+"allow-uri-read" = ""
